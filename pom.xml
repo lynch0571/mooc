@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>suime</artifactId>
+        <groupId>com.suime</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>mooc</artifactId>
+    <packaging>war</packaging>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+    <properties>
+        <confucian.version>1.0.1</confucian.version>
+        <suime.version>1.0.0</suime.version>
+        <pingpp.version>2.1.1</pingpp.version>
+        <servlet.version>3.1.0</servlet.version>
+        <jsp.version>2.2</jsp.version>
+        <junit.version>4.11</junit.version>
+    </properties>
+    <dependencies>
+        <!-- 基础框架 -->
+        <dependency>
+            <groupId>com.confucian</groupId>
+            <artifactId>confucian-mybatis</artifactId>
+            <version>${confucian.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.confucian</groupId>
+            <artifactId>confucian-tools</artifactId>
+            <version>${confucian.version}</version>
+        </dependency>
+
+        <!-- suime -->
+        <dependency>
+            <groupId>com.suime</groupId>
+            <artifactId>suime-common</artifactId>
+            <version>${suime.version}</version>
+        </dependency>
+        <!-- pingpp -->
+        <dependency>
+            <groupId>Pingplusplus</groupId>
+            <artifactId>pingpp-java</artifactId>
+            <version>${pingpp.version}</version>
+        </dependency>
+
+        <!-- servlet 相关包，provided 打包时不会把这些jar引用，由容器提供 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>${jsp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- test -->
+        <!-- junit测试包 start -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

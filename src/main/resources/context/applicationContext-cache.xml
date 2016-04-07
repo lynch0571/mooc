@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    -->
+    <bean id="plainCallbackHandler" class="net.spy.memcached.auth.PlainCallbackHandler">
+        <constructor-arg index="0" value="${ocs.username}"/>
+        <constructor-arg index="1" value="${ocs.password}"/>
+    </bean>
+
+    <bean id="authDescriptor" class="net.spy.memcached.auth.AuthDescriptor">
+        <constructor-arg index="0">
+            <array>
+                <value>PLAIN</value>
+            </array>
+        </constructor-arg>
+        <constructor-arg index="1" ref="plainCallbackHandler"/>
+    </bean>
+
+    <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean">
+        <!--
+        <property name="servers" value="${cache.server}"/>
+        <property name="protocol" value="BINARY"/>
+        -->
+        <property name="servers" value="${ocs.server}" />
+        <property name="protocol" value="BINARY" />
+        <property name="authDescriptor" ref="authDescriptor" />
+        <!--
+        -->
+        <property name="transcoder">
+            <bean class="net.spy.memcached.transcoders.SerializingTranscoder">
+                <property name="compressionThreshold" value="1024"/>
+            </bean>
+        </property>
+        <property name="opTimeout" value="1000"/>
+        <property name="timeoutExceptionThreshold" value="1998"/>
+        <property name="hashAlg">
+            <value type="net.spy.memcached.DefaultHashAlgorithm">KETAMA_HASH</value>
+        </property>
+        <property name="locatorType" value="CONSISTENT"/>
+        <property name="failureMode" value="Redistribute"/>
+        <property name="useNagleAlgorithm" value="false"/>
+    </bean>
+
+    <bean id="cacheService" class="com.suime.common.cache.impl.CacheServiceImpl"/>
+
+</beans>
