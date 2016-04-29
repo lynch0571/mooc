@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * teacher 实体类
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 30/04/2016.
  */ 
 public class Teacher implements Serializable {
 	/**
@@ -36,6 +36,16 @@ public class Teacher implements Serializable {
 	 * password
 	 */
 	private String password;
+
+	/**
+	 * job
+	 */
+	private String job;
+
+	/**
+	 * photo
+	 */
+	private String photo;
 
 	/**
 	 * createTime
@@ -103,6 +113,22 @@ public class Teacher implements Serializable {
 
 	public String getPassword(){
 		return password;
+	}
+
+	public void setJob(String job){
+	this.job=job;
+	}
+
+	public String getJob(){
+		return job;
+	}
+
+	public void setPhoto(String photo){
+	this.photo=photo;
+	}
+
+	public String getPhoto(){
+		return photo;
 	}
 
 	public void setCreateTime(Timestamp createTime){

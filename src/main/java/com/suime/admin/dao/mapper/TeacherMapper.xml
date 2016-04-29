@@ -10,6 +10,8 @@
 		<result column="cellphone" property="cellphone"/>
 		<result column="mail" property="mail"/>
 		<result column="password" property="password"/>
+		<result column="job" property="job"/>
+		<result column="photo" property="photo"/>
 		<result column="create_time" property="createTime"/>
 		<result column="update_time" property="updateTime"/>
 		<result column="description" property="description"/>
@@ -41,7 +43,7 @@
 	</sql>
 
 	<sql id="sqlColumns">
-		id, name, gender, cellphone, mail, password, create_time, update_time, description, status
+		id, name, gender, cellphone, mail, password, job, photo, create_time, update_time, description, status
 	</sql>
 
 	<insert id="save" parameterType="com.suime.context.model.Teacher" keyProperty="id">
@@ -52,8 +54,8 @@
 		values
 		(
 		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{gender, jdbcType=TINYINT}, #{cellphone, jdbcType=VARCHAR}, 
-		#{mail, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, 
-		#{description, jdbcType=VARCHAR}, #{status, jdbcType=TINYINT}
+		#{mail, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR}, #{job, jdbcType=VARCHAR}, #{photo, jdbcType=VARCHAR}, 
+		#{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{description, jdbcType=VARCHAR}, #{status, jdbcType=TINYINT}
 		)
 	</insert>
 
@@ -102,6 +104,12 @@
 			</if>
 			<if test="password != null">
 				password = #{password, jdbcType=VARCHAR},
+			</if>
+			<if test="job != null">
+				job = #{job, jdbcType=VARCHAR},
+			</if>
+			<if test="photo != null">
+				photo = #{photo, jdbcType=VARCHAR},
 			</if>
 			<if test="createTime != null">
 				create_time = #{createTime, jdbcType=TIMESTAMP},
