@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suime.admin.dao.ChapterMapper">
+	<cache flushInterval="300000" size="512"/>
+
+	<resultMap id="resultMap" type="com.suime.context.model.Chapter">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="course_id" property="courseId"/>
+		<result column="create_time" property="createTime"/>
+		<result column="update_time" property="updateTime"/>
+		<result column="status" property="status"/>
+	</resultMap>
+
+	<sql id="sqlWhere">
+		<if test="conds!=null">
+			<trim prefix="WHERE" prefixOverrides="AND|OR">
+				<foreach collection="conds.conds" index="index" item="cond">
+					${cond.linkType}
+					<if test="cond.condType == 'EQUAL'">${cond.param} = #{cond.value}</if>
+					<if test="cond.condType == 'GREATEQUAL'">${cond.param} &gt;= #{cond.value}</if>
+					<if test="cond.condType == 'GREATTHAN'">${cond.param} &gt; #{cond.value}</if>
+					<if test="cond.condType == 'LESSEQUAL'">${cond.param} &lt;= #{cond.value}</if>
+					<if test="cond.condType == 'LESSTHAN'">${cond.param} &lt; #{cond.value}</if>
+					<if test="cond.condType == 'BETWEEN'">${cond.param} BETWEEN #{cond.startValue} AND #{cond.endValue}</if>
+					<if test="cond.condType == 'ISNULL'">${cond.param} IS NULL</if>
+					<if test="cond.condType == 'NOTNULL'">${cond.param} IS NOT NULL</if>
+					<if test="cond.condType == 'LIKE'">${cond.param} LIKE #{cond.value}</if>
+					<if test="cond.condType == 'IN'">${cond.param} IN
+						<foreach item="item" index="index" collection="cond.value" open="(" separator="," close=")">
+							#{item}
+						</foreach>
+					</if>
+				</foreach>
+			</trim>
+		</if>
+	</sql>
+
+	<sql id="sqlColumns">
+		id, name, course_id, create_time, update_time, status
+	</sql>
+
+	<insert id="save" parameterType="com.suime.context.model.Chapter" keyProperty="id">
+		insert into chapter
+		(
+		<include refid="sqlColumns"/>
+		)
+		values
+		(
+		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{courseId, jdbcType=INTEGER}, #{createTime, jdbcType=TIMESTAMP}, 
+		#{updateTime, jdbcType=TIMESTAMP}, #{status, jdbcType=TINYINT}
+		)
+	</insert>
+
+	<select id="fetchById" parameterType="java.lang.Long" resultMap="resultMap">
+		SELECT <include refid="sqlColumns" /> FROM chapter t
+		WHERE t.id=#{id}
+		</select>
+
+	<select id="count" parameterType="java.util.Map" resultType="java.lang.Integer">
+		SELECT COUNT(1)  FROM chapter<include refid="sqlWhere" />
+	</select>
+
+	<select id="fetchSearchByPage" parameterType="java.util.Map" resultMap="resultMap">
+	<choose>
+		<when test="limit>0">
+			SELECT <include refid="sqlColumns" /> 
+			FROM chapter t
+			<include refid="sqlWhere" />
+			limit #{offset},#{limit}
+		</when>
+		<otherwise>
+			SELECT <include refid="sqlColumns" /> 
+			FROM chapter t
+			<include refid="sqlWhere" />
+		</otherwise>
+	</choose>
+	</select>
+
+	<update id="update" parameterType="com.suime.context.model.Chapter">
+		update chapter
+		<set>
+			<if test="id != null">
+				id = #{id, jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				name = #{name, jdbcType=VARCHAR},
+			</if>
+			<if test="courseId != null">
+				course_id = #{courseId, jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime, jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime, jdbcType=TIMESTAMP},
+			</if>
+			<if test="status != null">
+				status = #{status, jdbcType=TINYINT},
+			</if>
+		</set>
+		where id=#{id,jdbcType=BIGINT}
+	</update>
+
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from chapter where id=#{id,jdbcType=BIGINT}
+	</delete>
+
+</mapper>
