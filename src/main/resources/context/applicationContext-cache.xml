@@ -19,13 +19,11 @@
     </bean>
 
     <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean">
-        <!--
         <property name="servers" value="${cache.server}"/>
         <property name="protocol" value="BINARY"/>
-        -->
-        <property name="servers" value="${ocs.server}" />
+<!--         <property name="servers" value="${ocs.server}" />
         <property name="protocol" value="BINARY" />
-        <property name="authDescriptor" ref="authDescriptor" />
+        <property name="authDescriptor" ref="authDescriptor" /> -->
         <!--
         -->
         <property name="transcoder">
