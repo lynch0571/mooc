@@ -29,7 +29,8 @@ public class CodeTools {
 
 			mybatisCodeTools.setAuthorName("Lynch");
 
-			String tableNames = "student";
+//			String tableNames = "student";
+			String tableNames = "teacher";
 			String[] array = tableNames.split(Constants.VALUE_SIMPLE_SPLIT_CHAR);
 			for (String tableName : array) {
 			    mybatisCodeTools.setTableName(tableName);
