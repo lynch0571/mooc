@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * course 实体类
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 30/04/2016.
  */ 
 public class Course implements Serializable {
 	/**
@@ -45,7 +45,7 @@ public class Course implements Serializable {
 	/**
 	 * image
 	 */
-	private Integer image;
+	private String image;
 
 	/**
 	 * path
@@ -61,6 +61,11 @@ public class Course implements Serializable {
 	 * status
 	 */
 	private Byte status;
+
+	/**
+	 * studentCount
+	 */
+	private Integer studentCount;
 
 	public void setId(Integer id){
 	this.id=id;
@@ -118,11 +123,11 @@ public class Course implements Serializable {
 		return updateTime;
 	}
 
-	public void setImage(Integer image){
+	public void setImage(String image){
 	this.image=image;
 	}
 
-	public Integer getImage(){
+	public String getImage(){
 		return image;
 	}
 
@@ -148,6 +153,14 @@ public class Course implements Serializable {
 
 	public Byte getStatus(){
 		return status;
+	}
+
+	public void setStudentCount(Integer studentCount){
+	this.studentCount=studentCount;
+	}
+
+	public Integer getStudentCount(){
+		return studentCount;
 	}
 
 }

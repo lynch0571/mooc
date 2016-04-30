@@ -5,7 +5,7 @@ import com.suime.context.model.Course;
 
 /**
  * courseMapper
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 30/04/2016.
  */
 public interface CourseMapper extends GenericMapper<Course> {
 

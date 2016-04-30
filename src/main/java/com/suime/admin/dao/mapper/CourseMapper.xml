@@ -15,6 +15,7 @@
 		<result column="path" property="path"/>
 		<result column="duration" property="duration"/>
 		<result column="status" property="status"/>
+		<result column="student_count" property="studentCount"/>
 	</resultMap>
 
 	<sql id="sqlWhere">
@@ -42,7 +43,7 @@
 	</sql>
 
 	<sql id="sqlColumns">
-		id, name, teacher_id, chapter_count, section_count, create_time, update_time, image, path, duration, status
+		id, name, teacher_id, chapter_count, section_count, create_time, update_time, image, path, duration, status, student_count
 	</sql>
 
 	<insert id="save" parameterType="com.suime.context.model.Course" keyProperty="id">
@@ -53,8 +54,8 @@
 		values
 		(
 		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{teacherId, jdbcType=INTEGER}, #{chapterCount, jdbcType=TINYINT}, 
-		#{sectionCount, jdbcType=TINYINT}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{image, jdbcType=INTEGER}, 
-		#{path, jdbcType=INTEGER}, #{duration, jdbcType=INTEGER}, #{status, jdbcType=TINYINT}
+		#{sectionCount, jdbcType=TINYINT}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{image, jdbcType=VARCHAR}, 
+		#{path, jdbcType=INTEGER}, #{duration, jdbcType=INTEGER}, #{status, jdbcType=TINYINT}, #{studentCount, jdbcType=INTEGER}
 		)
 	</insert>
 
@@ -108,7 +109,7 @@
 				update_time = #{updateTime, jdbcType=TIMESTAMP},
 			</if>
 			<if test="image != null">
-				image = #{image, jdbcType=INTEGER},
+				image = #{image, jdbcType=VARCHAR},
 			</if>
 			<if test="path != null">
 				path = #{path, jdbcType=INTEGER},
@@ -118,6 +119,9 @@
 			</if>
 			<if test="status != null">
 				status = #{status, jdbcType=TINYINT},
+			</if>
+			<if test="studentCount != null">
+				student_count = #{studentCount, jdbcType=INTEGER},
 			</if>
 		</set>
 		where id=#{id,jdbcType=BIGINT}

@@ -12,7 +12,7 @@ import com.suime.admin.service.CourseService;
 
 /**
  * courseService
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 30/04/2016.
  */
 @Service("courseService")
 public class CourseServiceImpl extends GenericServiceImpl<Course> implements CourseService {

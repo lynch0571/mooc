@@ -5,7 +5,7 @@ import com.suime.context.model.Course;
 
 /**
  * courseService
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 30/04/2016.
  */
 public interface CourseService extends GenericService<Course> {
 
