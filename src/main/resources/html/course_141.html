@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+玩转Bootstrap（基础）_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="Bootstrap框架是一个非常受欢迎的前端开发框架，他能让后端程序员和不懂设计的前端人员制作出优美的Web页面或Web应用程序。在这个系列教程中，将带领大家了解Bootstrap框架以及如何使用Bootstrap框架，并且能够独立定制出适合自己的Bootstrap。"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 141,
+    name: '玩转Bootstrap（基础）',
+    pic: 'http://img.mukewang.com/5704ae850001f59906000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=fe">前端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=bootstrap">Bootstrap</a>
+                <i class="path-split">\</i><a href="/view/141"><span>玩转Bootstrap（基础）</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">玩转Bootstrap（基础）</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>中级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong>10</strong>小时<strong> 0</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>117267</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="141">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/5704ae850001a03506000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/3399" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.7</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=141" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=141" target="_blank">186人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/141"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/141"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/141"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/141?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/141">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 Bootstrap简介</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3399' class="J-media-item studyvideo">1-1 Bootstrap简介 (02:01)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2791' class="J-media-item programme">1-2 Bootstrap到底是什么？
+                                                </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3400' class="J-media-item studyvideo">1-3 如何开始使用Bootstrap (05:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2322' class="J-media-item programme">1-4 基本的HTML模板
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2323' class="J-media-item programme">1-5 全局样式
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 排版</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/2268' class="J-media-item programme">2-1 标题（一）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2274' class="J-media-item programme">2-2 标题（二）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2275' class="J-media-item programme">2-3 段落（正文文本）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2276' class="J-media-item programme">2-4 强调内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2277' class="J-media-item programme">2-5 粗体
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2278' class="J-media-item programme">2-6 斜体
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2279' class="J-media-item programme">2-7 强调相关的类
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2280' class="J-media-item programme">2-8 文本对齐风格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2281' class="J-media-item programme">2-9 列表--简介
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2282' class="J-media-item programme">2-10 列表--无序列表、有序列表
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2284' class="J-media-item programme">2-11 列表--去点列表
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2285' class="J-media-item programme">2-12 列表--内联列表
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2286' class="J-media-item programme">2-13 列表--定义列表
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2287' class="J-media-item programme">2-14 列表--水平定义列表
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2288' class="J-media-item programme">2-15 代码（一）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2289' class="J-media-item programme">2-16 代码（二）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2290' class="J-media-item programme">2-17 表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2294' class="J-media-item programme">2-18 表格--表格行的类
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2296' class="J-media-item programme">2-19 表格--基础表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2299' class="J-media-item programme">2-20 表格--斑马线表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2301' class="J-media-item programme">2-21 表格--带边框的表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2305' class="J-media-item programme">2-22 表格--鼠标悬浮高亮的表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2308' class="J-media-item programme">2-23 表格--紧凑型表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2310' class="J-media-item programme">2-24 表格--响应式表格
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 表单</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/2341' class="J-media-item programme">3-1 基础表单
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2343' class="J-media-item programme">3-2 水平表单
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2344' class="J-media-item programme">3-3 内联表单
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2345' class="J-media-item programme">3-4 表单控件(输入框input)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2346' class="J-media-item programme">3-5 表单控件(下拉选择框select)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2347' class="J-media-item programme">3-6 表单控件(文本域textarea)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2348' class="J-media-item programme">3-7 表单控件(复选框checkbox和单选择按钮radio)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2683' class="J-media-item programme">3-8 表单控件(复选框和单选按钮水平排列)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2355' class="J-media-item programme">3-9 表单控件(按钮)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2356' class="J-media-item programme">3-10 表单控件大小
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2359' class="J-media-item programme">3-11 表单控件状态(焦点状态)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2361' class="J-media-item programme">3-12 表单控件状态(禁用状态)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2362' class="J-media-item programme">3-13 表单控件状态(验证状态)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2363' class="J-media-item programme">3-14 表单提示信息
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2364' class="J-media-item programme">3-15 按钮
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2365' class="J-media-item programme">3-16 基本按钮
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2366' class="J-media-item programme">3-17 默认按钮
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2367' class="J-media-item programme">3-18 多标签支持
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2370' class="J-media-item programme">3-19 定制风格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2372' class="J-media-item programme">3-20 按钮大小
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2373' class="J-media-item programme">3-21 块状按钮
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2375' class="J-media-item programme">3-22 按钮状态——活动状态
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2376' class="J-media-item programme">3-23 按钮状态——禁用状态
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2377' class="J-media-item programme">3-24 图像
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2378' class="J-media-item programme">3-25 图标（一）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2804' class="J-media-item programme">3-26 图标（二）
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 网格系统</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/2324' class="J-media-item programme">4-1 实现原理
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2325' class="J-media-item programme">4-2 工作原理
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2326' class="J-media-item programme">4-3 基本用法
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2327' class="J-media-item programme">4-4 列偏移
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3323' class="J-media-item programme">4-5 列排序
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2329' class="J-media-item programme">4-6 列的嵌套
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 菜单、按钮及导航</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/2881' class="J-media-item programme">5-1 下拉菜单（基本用法）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2903' class="J-media-item programme">5-2 下拉菜单（原理分析）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2916' class="J-media-item programme">5-3 下拉菜单（下拉分隔线）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2919' class="J-media-item programme">5-4 下拉菜单（菜单标题）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2920' class="J-media-item programme">5-5 下拉菜单（对齐方式）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2952' class="J-media-item programme">5-6 下拉菜单（菜单项状态）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2953' class="J-media-item programme">5-7 按钮（按钮组）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2965' class="J-media-item programme">5-8 按钮（按钮工具栏）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2980' class="J-media-item programme">5-9 按钮（嵌套分组）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2986' class="J-media-item programme">5-10 按钮（垂直分组）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2987' class="J-media-item programme">5-11 按钮（等分按钮）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3023' class="J-media-item programme">5-12 按钮下拉菜单
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3026' class="J-media-item programme">5-13 按钮的向下向上三角形
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3028' class="J-media-item programme">5-14 向上弹起的下拉菜单
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3031' class="J-media-item programme">5-15 导航（基础样式）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3032' class="J-media-item programme">5-16 导航（标签形tab导航）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3034' class="J-media-item programme">5-17 导航（胶囊形(pills)导航）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3036' class="J-media-item programme">5-18 导航（垂直堆叠的导航）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3039' class="J-media-item programme">5-19 自适应导航（使用）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3040' class="J-media-item programme">5-20 自适应导航（实现原理）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3042' class="J-media-item programme">5-21 导航加下拉菜单（二级导航）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3183' class="J-media-item programme">5-22 面包屑式导航
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 导航条、分页导航</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/3110' class="J-media-item programme">6-1 导航条基础
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3111' class="J-media-item programme">6-2 基础导航条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3120' class="J-media-item programme">6-3 为导航条添加标题、二级菜单及状态
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3121' class="J-media-item programme">6-4 带表单的导航条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3122' class="J-media-item programme">6-5 导航条中的按钮、文本和链接
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3123' class="J-media-item programme">6-6 固定导航条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3124' class="J-media-item programme">6-7 响应式导航条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3182' class="J-media-item programme">6-8 反色导航条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3185' class="J-media-item programme">6-9 分页导航（带页码的分页导航）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3186' class="J-media-item programme">6-10 分页导航（翻页分页导航）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3187' class="J-media-item programme">6-11 标签
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3190' class="J-media-item programme">6-12 徽章
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 其它内置组件</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/3777' class="J-media-item programme">7-1 缩略图（一）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3780' class="J-media-item programme">7-2 缩略图（二）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3782' class="J-media-item programme">7-3 警示框
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3783' class="J-media-item programme">7-4 警示框--默认警示框
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3786' class="J-media-item programme">7-5 警示框--可关闭的警示框
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3788' class="J-media-item programme">7-6 警示框--警示框的链接
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3790' class="J-media-item programme">7-7 进度条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3791' class="J-media-item programme">7-8 进度条--基本样式
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3793' class="J-media-item programme">7-9 进度条--彩色进度条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3800' class="J-media-item programme">7-10 进度条--条纹进度条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3809' class="J-media-item programme">7-11 进度条--动态条纹进度条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3813' class="J-media-item programme">7-12 进度条--层叠进度条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3814' class="J-media-item programme">7-13 进度条--带Label的进度条
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3815' class="J-media-item programme">7-14 媒体对象
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3816' class="J-media-item programme">7-15 媒体对象--默认媒体对象
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3817' class="J-media-item programme">7-16 媒体对象--媒体对象的嵌套
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3818' class="J-media-item programme">7-17 媒体对象--媒体对象列表
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3819' class="J-media-item programme">7-18 列表组
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3821' class="J-media-item programme">7-19 列表组--基础列表组
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3822' class="J-media-item programme">7-20 列表组--带徽章的列表组
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3823' class="J-media-item programme">7-21 列表组--带链接的列表组
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3825' class="J-media-item programme">7-22 列表组--自定义列表组
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3826' class="J-media-item programme">7-23 列表组--列表项的状态设置
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3827' class="J-media-item programme">7-24 列表组--多彩列表组
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3828' class="J-media-item programme">7-25 面板
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3829' class="J-media-item programme">7-26 面板--基础面板
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3830' class="J-media-item programme">7-27 面板--带有头和尾的面板
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3834' class="J-media-item programme">7-28 面板--彩色面板
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3835' class="J-media-item programme">7-29 面板--面板中嵌套表格
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3838' class="J-media-item programme">7-30 面板--面板中嵌套列表组
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第8章 Bootstrap支持的JavaScript插件</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/3851' class="J-media-item programme">8-1 导入JavaScript插件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3852' class="J-media-item programme">8-2 动画过渡（Transitions）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3854' class="J-media-item programme">8-3 模态弹出框（Modals）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3855' class="J-media-item programme">8-4 模态弹出框--结构分析
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/4486' class="J-media-item programme">8-5 模态弹出框--实现原理解析（一）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/4485' class="J-media-item programme">8-6 模态弹出框--实现原理解析（二）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3859' class="J-media-item programme">8-7 模态弹出框--触发模态弹出窗2种方法
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/4513' class="J-media-item programme">8-8 模态弹出框--为弹出框增加过度动画效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3863' class="J-media-item programme">8-9 模态弹出框--模态弹出窗的使用（data-参数说明）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3866' class="J-media-item programme">8-10 模态弹出框--模态弹出窗的使用（JavaScript触发）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3868' class="J-media-item programme">8-11 模态弹出框--JavaScript触发时的参数设置（一）
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/3869' class="J-media-item programme">8-12 模态弹出框--JavaScript触发时的参数设置（二）
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/104044/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/53216e780001060f01600160-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/104044/courses?sort=publish" target="_blank">大漠</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">Web前端工程师</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">本课程适合具有一定前端基础的人员，对HTML和CSS有一定的了解，对于定制Bootstrap的同学需要具备LESS和Sass基础知识。</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">1、了解Bootstrap框架
+2、如何使用Bootstrap制作Web页面或Web应用程序
+3、如何定制个性化Bootstrap
+</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

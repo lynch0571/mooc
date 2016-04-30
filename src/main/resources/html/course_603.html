@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+oeasy教你玩转css禅意花园_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="本课程使用css设计领域最经典的例子禅意花园来学习css实战，36个设计让您彻底了解css的方方面面。从设计入手到精通界面，是成为优秀网页设计师的快速路径。
+"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 603,
+    name: 'oeasy教你玩转css禅意花园',
+    pic: 'http://img.mukewang.com/5707795b00018b7006000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=fe">前端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=CSS3">CSS3</a>
+                <i class="path-split">\</i><a href="/view/603"><span>oeasy教你玩转css禅意花园</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">oeasy教你玩转css禅意花园</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>中级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong>27</strong>小时<strong> 0</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>17525</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="603">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/5707795c0001156f06000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/11120" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>10.0</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=603" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=603" target="_blank">2人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/603"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/603"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/603"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/603?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/603">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 css禅意花园基础篇</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/11120' class="J-media-item studyvideo">1-1 缘起-经典 (09:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11121' class="J-media-item studyvideo">1-2 自刷新，环境搭建 (08:58)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11122' class="J-media-item studyvideo">1-3 内容 (12:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11123' class="J-media-item studyvideo">1-4 绝对定位 (46:58)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11124' class="J-media-item studyvideo">1-5 昆虫学-居中，after，before (36:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11125' class="J-media-item studyvideo">1-6 百合，符号的意味，节奏和秩序 (54:13)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11126' class="J-media-item studyvideo">1-7 灵感 横向 固定定位 fixed position (52:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11127' class="J-media-item studyvideo">1-8 和尚 相对定位 背景 tile (50:49)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11128' class="J-media-item studyvideo">1-9 并非最小化 一般做法 标准 (38:19)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 css禅意花园进阶篇</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/11129' class="J-media-item studyvideo">2-1 安静 最初的设计 (44:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11130' class="J-media-item studyvideo">2-2 呼应 亚特兰蒂斯 设计 微妙 (33:40)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11131' class="J-media-item studyvideo">2-3 向日葵 阴影 方圆对比 尖锐和柔和 (42:44)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11132' class="J-media-item studyvideo">2-4 春天，绝对定位和浮动定位的结合 ，虚线点的细节 (53:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11133' class="J-media-item studyvideo">2-5 翠绿活力 块级元素 ps 渐变  边线 (47:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11134' class="J-media-item studyvideo">2-6 balade 叙事曲 讲故事 吸引视线 充满细节 (44:37)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11135' class="J-media-item studyvideo">2-7 夜行 橙黄色灯光 (42:05)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11136' class="J-media-item studyvideo">2-8 ps毛玻璃 日式花园 (48:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11137' class="J-media-item studyvideo">2-9  边框融合 (36:23)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 css禅意花园节奏篇</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/11149' class="J-media-item studyvideo">3-1 海阔天高 节奏 变化 相应 映像 印象 (36:13)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11150' class="J-media-item studyvideo">3-2 无边界-自由范围-可扩展 (50:42)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11140' class="J-media-item studyvideo">3-3 变化 不同 手绘 微妙 (40:30)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11141' class="J-media-item studyvideo">3-4 地下 绝对定位 大横幅 神秘 (29:24)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11142' class="J-media-item studyvideo">3-5 水天一色 和合 (34:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11143' class="J-media-item studyvideo">3-6 倾斜 负内边距 行高横线 段落编号 (44:15)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11144' class="J-media-item studyvideo">3-7 释放 大色块 细节 边框 统一 节奏 (56:37)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11145' class="J-media-item studyvideo">3-8 黑白 印戳 纸张 装饰 风格 版式 (41:27)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11146' class="J-media-item studyvideo">3-9 变奏 血色欲望 变化 灵动 网点纸 新闻 (45:24)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 css禅意花园平衡篇</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/11154' class="J-media-item studyvideo">4-1 黄金平衡 左右对称 色相平衡 (34:30)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11155' class="J-media-item studyvideo">4-2 谷物，extra 各种附加元素 布局 (53:11)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11156' class="J-media-item studyvideo">4-3 悬空寺 四面边框 不动的佛像 盆景天空 (40:02)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11157' class="J-media-item studyvideo">4-4 郁金香 边缘 图案 pile图形拼合 菜单效果 横版 relative (51:23)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11158' class="J-media-item studyvideo">4-5 花园之门 door 影调 质感 摄影 材质 铁锈 偶然 怀旧 斑驳 (30:38)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11159' class="J-media-item studyvideo">4-6 绿草如茵 边框 圆形 圆角矩形 图案做法 (01:01:07)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11160' class="J-media-item studyvideo">4-7 乐高风格 像素画 图像拼合 节奏 变化 (45:34)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11161' class="J-media-item studyvideo">4-8 radio 复古 横版 设计 横向 (43:18)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11162' class="J-media-item studyvideo">4-9 边框 渐变 (26:14)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 css禅意花园设计篇</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/11163' class="J-media-item studyvideo">5-1 书信 margin border 渐变 (34:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11164' class="J-media-item studyvideo">5-2 固定定位 窗口效果 (39:57)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11165' class="J-media-item studyvideo">5-3 spigot插件开发 (17:29)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11166' class="J-media-item studyvideo">5-4 回忆 (01:06:41)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11167' class="J-media-item studyvideo">5-5 荷叶主题 选择器 蛤蟆（上） (40:40)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/11198' class="J-media-item studyvideo">5-6 荷叶主题 选择器 蛤蟆（下） (22:38)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/141256/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/53855e6f0001034501400140-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/141256/courses?sort=publish" target="_blank">Oeasy</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">页面重构设计</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">基础的html、css、ps知识
+</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">设计知识、ps知识、css的精髓
+</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

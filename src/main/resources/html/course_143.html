@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+走进SVG_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="SVG 是 HTML5 中矢量图的标记语言，它保持了强大的绘图能力的同时，具有非常高端的使用接口，通过直接操作 Dom 节点的形式来操作图形。本课程意在让学生掌握 SVG 这门语言和它对应的一些 API，再结合2D绘图的知识，让学生具有对页面复杂图形的渲染和控制能力。"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 143,
+    name: '走进SVG',
+    pic: 'http://img.mukewang.com/5440b6f500013c5306000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=fe">前端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=html5">Html5</a>
+                <i class="path-split">\</i><a href="/view/143"><span>走进SVG</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">走进SVG</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>高级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong> 4</strong>小时<strong>55</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>23662</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="143">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/55af49cf0001f2eb06000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/2609" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.6</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=143" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=143" target="_blank">5人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/143"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/143"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/143"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/143?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/143">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 SVG 入门</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2609' class="J-media-item studyvideo">1-1 SVG简介 (06:40)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2610' class="J-media-item studyvideo">1-2 SVG的图形和属性 (05:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2611' class="J-media-item studyvideo">1-3 基本操作API (03:23)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2612' class="J-media-item studyvideo">1-4 综合实例：SVG编辑器 (14:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2613' class="J-media-item studyvideo">1-5 本章总结 (01:30)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 SVG 中的坐标系统</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2688' class="J-media-item studyvideo">2-1 视野的概念 (12:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2766' class="J-media-item studyvideo">2-2 分组的概念 (03:44)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2892' class="J-media-item studyvideo">2-3 坐标系统概述 (02:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2893' class="J-media-item studyvideo">2-4 四个坐标系 (09:54)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2905' class="J-media-item studyvideo">2-5 坐标变换 (17:32)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 颜色、渐变和笔刷</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3135' class="J-media-item studyvideo">3-1 RGB和HSL (06:38)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3136' class="J-media-item studyvideo">3-2 线性渐变和径向渐变 (07:53)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3137' class="J-media-item studyvideo">3-3 使用笔刷 (06:49)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 Path 高级教程</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3761' class="J-media-item studyvideo">4-1 Path概述 (05:16)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3762' class="J-media-item studyvideo">4-2 移动和直线命令 (06:04)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3766' class="J-media-item studyvideo">4-3 弧线命令 (10:13)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3767' class="J-media-item studyvideo">4-4 贝塞尔曲线命令（C、Q） (12:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3768' class="J-media-item studyvideo">4-5 光滑贝塞尔曲线命令（T、S） (07:00)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3769' class="J-media-item studyvideo">4-6 回顾与思考 (01:55)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 SVG 文本</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3775' class="J-media-item studyvideo">5-1 &lt;text&gt;、&lt;tspan&gt; 以及其属性 (14:26)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3776' class="J-media-item studyvideo">5-2 利用 dy 属性实现波浪文字效果 (13:36)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3778' class="J-media-item studyvideo">5-3 垂直居中问题 (08:44)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4654' class="J-media-item studyvideo">5-4 路径文本 (13:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4655' class="J-media-item studyvideo">5-5 使用脚本控制路径文本 (12:37)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4656' class="J-media-item studyvideo">5-6 使用超链接 (02:28)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 图形引用、裁切和蒙版</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/4795' class="J-media-item studyvideo">6-1 use标签创建图形引用 (12:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4796' class="J-media-item studyvideo">6-2 clip标签裁切图形 (09:55)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6574' class="J-media-item studyvideo">6-3 mask标签创建蒙版 (11:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6575' class="J-media-item studyvideo">6-4 总结 (01:57)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 SVG 动画</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6667' class="J-media-item studyvideo">7-1 动画原理 (04:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6668' class="J-media-item studyvideo">7-2 基本动画和变换动画 (18:08)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6669' class="J-media-item studyvideo">7-3 轨迹移动 (06:13)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6670' class="J-media-item studyvideo">7-4 力导向图 (22:15)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第8章 总结</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6640' class="J-media-item studyvideo">8-1 总结 (02:13)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/104043/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/537c0fb80001c70e38882592-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/104043/courses?sort=publish" target="_blank">techird</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">JS工程师</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">1.具备HTML+CSS知识基础；2.对CSS3有一定了解；3.具备一定JS的知识</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">让学生能熟悉使用 SVG 在实际的 Web 项目中进行一些 2D 绘图、特效的开发。</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

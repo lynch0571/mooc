@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+Android攻城狮的第二门课（第1季）_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="本课程由浅入深地带您学会Android的常用控件的开发和使用，以知识概念为主导，实例代码为驱动，带您走入一个神奇的移动开发世界。"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 107,
+    name: 'Android攻城狮的第二门课（第1季）',
+    pic: 'http://img.mukewang.com/53bf89320001073f06000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=mobile">移动开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=android">Android</a>
+                <i class="path-split">\</i><a href="/view/107"><span>Android攻城狮的第二门课（第1季）</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">Android攻城狮的第二门课（第1季）</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>初级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong> 5</strong>小时<strong> 0</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>63931</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="107">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/55af49c60001016906000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/1565" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.8</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=107" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=107" target="_blank">128人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/107"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/107"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/107"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/107?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/107">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+  <div id="notice" class="clearfix">
+  <div class="l"> <strong>课程公告:</strong> <a  href="javascript:void(0)">集成环境下载地址</a> </div> 
+  </div>
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 解读AndroidManifest配置文件</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1565' class="J-media-item studyvideo">1-1 AndroidManifest概述 (01:36)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1566' class="J-media-item studyvideo">1-2 全局信息配置 (01:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1567' class="J-media-item studyvideo">1-3 在配置文件中注册组件 (12:28)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1568' class="J-media-item studyvideo">1-4 权限配置 (04:02)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1569' class="J-media-item studyvideo">1-5 自定义权限 (05:41)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1570' class="J-media-item studyvideo">1-6 总结 (01:18)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 使用ListView显示信息列表</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1616' class="J-media-item studyvideo">2-1 课程目标 (02:02)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1617' class="J-media-item studyvideo">2-2 ListView解析 (00:45)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1618' class="J-media-item studyvideo">2-3 解读适配器 (01:59)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1619' class="J-media-item studyvideo">2-4 典型应用案例 (00:56)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1620' class="J-media-item studyvideo">2-5 使用ArrayAdapter (07:34)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1621' class="J-media-item studyvideo">2-6 使用SimpleAdapter (13:39)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1622' class="J-media-item studyvideo">2-7 监听ListView列表项点击事件 (05:36)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1623' class="J-media-item studyvideo">2-8 监听ListView滚动事件 (07:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1624' class="J-media-item studyvideo">2-9 总结 (01:00)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 使用DatePicker以及TimePicker显示当前日期和时间</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1713' class="J-media-item studyvideo">3-1 应用场景介绍 (02:56)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1714' class="J-media-item studyvideo">3-2 课程内容概述 (02:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1715' class="J-media-item studyvideo">3-3 案例需求描述 (01:54)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1716' class="J-media-item studyvideo">3-4 使用DatePicker实现日历选择器 (12:27)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1717' class="J-media-item studyvideo">3-5 使用TimePicker实现时间选择器 (01:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1718' class="J-media-item studyvideo">3-6 使用DatePickerDialog实现日期选择对话框 (02:39)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1719' class="J-media-item studyvideo">3-7 使用TimePickerDialog实现时间选择对话框 (02:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1720' class="J-media-item studyvideo">3-8 总结 (01:07)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 使用GridView以表格形式显示多张图片</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1812' class="J-media-item studyvideo">4-1 GridView概述 (03:59)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1814' class="J-media-item studyvideo">4-2 使用GridView (12:49)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1815' class="J-media-item studyvideo">4-3 设置属性 (04:20)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1816' class="J-media-item studyvideo">4-4 监听事件 (03:38)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 使用Spinner实现下拉列表</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1956' class="J-media-item studyvideo">5-1 课程目标 (03:18)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1957' class="J-media-item studyvideo">5-2 实现下拉列表 (15:20)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 使用ProgressBar实现进度条</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2154' class="J-media-item studyvideo">6-1 ProgressBar简介 (03:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2155' class="J-media-item studyvideo">6-2 设置ProgressBar显示风格 (02:52)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2156' class="J-media-item studyvideo">6-3 标题栏中的ProgressBar (05:15)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2157' class="J-media-item studyvideo">6-4 关键属性和方法 (02:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2158' class="J-media-item studyvideo">6-5 使用ProgressBar实现进度条 (19:49)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2159' class="J-media-item studyvideo">6-6 对话框形式的进度条 (12:06)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2160' class="J-media-item studyvideo">6-7 自定义进度条样式 (03:21)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 使用WebView显示网页</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2269' class="J-media-item studyvideo">7-1 WebView概述 (04:13)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2270' class="J-media-item studyvideo">7-2 使用WebView显示网页（一） (07:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2271' class="J-media-item studyvideo">7-3 使用WebView显示网页（二） (09:04)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2272' class="J-media-item studyvideo">7-4 使用WebView显示网页（三） (06:15)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2273' class="J-media-item studyvideo">7-5 使用WebView显示网页（四） (12:12)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第8章 Fragment基础概述</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2416' class="J-media-item studyvideo">8-1 Fragment的设计哲学 (04:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2417' class="J-media-item studyvideo">8-2 静态加载Fragment（一） (09:39)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2418' class="J-media-item studyvideo">8-3 静态加载Fragment（二） (06:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2419' class="J-media-item studyvideo">8-4 动态加载Fragment (07:41)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第9章 Fragment与Activity通信</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2501' class="J-media-item studyvideo">9-1 Fragment的生命周期（一） (06:55)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2502' class="J-media-item studyvideo">9-2 Fragment的生命周期（二） (08:43)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2503' class="J-media-item studyvideo">9-3 Activity向Fragment传递数据 (13:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2504' class="J-media-item studyvideo">9-4 Fragment向Activity传递数据 (11:48)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第10章 使用ViewPager实现导航</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2574' class="J-media-item studyvideo">10-1 认识ViewPager (04:03)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2578' class="J-media-item studyvideo">10-2 适配器PagerAdapter (12:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2579' class="J-media-item studyvideo">10-3 PagerTabStrip和PagerTitleStrip (09:10)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2580' class="J-media-item studyvideo">10-4 适配器FragmentPagerAdapter (13:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2581' class="J-media-item studyvideo">10-5 监听器的使用 (02:59)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第11章 使用ViewFlipper实现屏幕切换动画效果</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2656' class="J-media-item studyvideo">11-1 使用ViewFlipper实现的图片轮播 (11:59)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2657' class="J-media-item studyvideo">11-2 （知识扩展）支持手势滑动的ViewFlipper (08:04)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第12章 使用ScrollView实现滚动效果</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2782' class="J-media-item studyvideo">12-1 使用ScrollView实现滚动效果 (07:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2783' class="J-media-item studyvideo">12-2 监听ScrollView何时滑动到底部 (13:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2784' class="J-media-item studyvideo">12-3 控制ScrollView视图位置 (08:34)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第13章 使用Gallery和ImageSwitcher制作图片浏览器</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2884' class="J-media-item studyvideo">13-1 使用Gallery制作图片浏览器 (14:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2885' class="J-media-item studyvideo">13-2 Gallery的无限循环 (12:11)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第14章 使用SeekBar制作可拖动的进度条</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3033' class="J-media-item studyvideo">14-1 使用SeekBar制作可拖动的进度条 (08:28)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3035' class="J-media-item studyvideo">14-2 自定义SeekBar进度条 (06:35)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第15章 Android布局优化（大结局）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3228' class="J-media-item studyvideo">15-1 推荐使用布局 (05:08)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3229' class="J-media-item studyvideo">15-2 布局优化之include (12:49)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3230' class="J-media-item studyvideo">15-3 布局优化之merge (06:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3231' class="J-media-item studyvideo">15-4 布局优化之ViewStub (06:27)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/117503/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/537435a2000123b506400600-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/117503/courses?sort=publish" target="_blank">Smile浅笑</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">JAVA开发工程师</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">本课程是Android开发课程进阶部分的第1季，将讲解各种高级控件的使用，对于不熟悉Android开发的童鞋来说会有一定的难度，所以，建议在学习本门课程之前：
+1、熟练掌握Java基础语法和面向对象编程
+2、熟悉Android开发环境
+3、熟练使用Button、ImageView等基础控件
+</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">1、Android高级控件的应用场景
+2、Android高级控件的使用方法
+3、熟悉Android常用高级控件
+</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+洪大师带你解读Symfony2框架_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="全网首发，Symfony2是国外最流行的PHP开发框架，近年来Symfony2正以迅雷不及掩耳之势迅速占据国内PHP开发框架的市场份额， 鉴于symfony2高度重视业务逻辑，代码易读，维护轻松，能大大提升团队的开发效率，提高代码性能，现在Symfony2框架已成为大型互联网公司的首选框架。"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 244,
+    name: '洪大师带你解读Symfony2框架',
+    pic: 'http://img.mukewang.com/547821430001a3e006000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=be">后端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=php">PHP</a>
+                <i class="path-split">\</i><a href="/view/244"><span>洪大师带你解读Symfony2框架</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">洪大师带你解读Symfony2框架</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>高级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong> 8</strong>小时<strong>43</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>13406</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="244">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/55af4a55000189f906000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/5011" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.5</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=244" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=244" target="_blank">13人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/244"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/244"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/244"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/244?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/244">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 关于Symfony2</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5011' class="J-media-item studyvideo">1-1 关于Symfony (02:47)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5012' class="J-media-item studyvideo">1-2 关于Symfony和Symfony2 (04:08)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5013' class="J-media-item studyvideo">1-3 为什么要使用Symfony2 (09:44)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5014' class="J-media-item studyvideo">1-4 Symfony2优势何在 (05:23)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5031' class="J-media-item studyvideo">1-5 Symfony2速度如何 (08:41)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5030' class="J-media-item studyvideo">1-6 课程概述 (08:48)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 开发环境搭建</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5161' class="J-media-item studyvideo">2-1 本章概述 (01:58)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5162' class="J-media-item studyvideo">2-2 使用PHP CLI-Server搭建简易开发环境 (09:59)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5164' class="J-media-item studyvideo">2-3 使用Vagrant搭建完整开发环境 (13:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5165' class="J-media-item studyvideo">2-4 搭建共享开发服务器 (03:02)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 Symfony2的核心文件及目录结构介绍</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5166' class="J-media-item studyvideo">3-1 安装Symfony2框架 (03:25)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5167' class="J-media-item studyvideo">3-2 Symfony2核心文件及目录结构介绍 (22:00)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5168' class="J-media-item studyvideo">3-3 编写一个Hello Word页面 (09:06)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 路由</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5326' class="J-media-item studyvideo">4-1 路由工作原理及配置 (06:11)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5327' class="J-media-item studyvideo">4-2 如何定义URL (14:04)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 Controller</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5488' class="J-media-item studyvideo">5-1 Controller简介 (01:49)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5489' class="J-media-item studyvideo">5-2 Controller之Request (08:11)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5490' class="J-media-item studyvideo">5-3 Controller之Response (07:59)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5491' class="J-media-item studyvideo">5-4 Controller之Session (04:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5502' class="J-media-item studyvideo">5-5 Controller之Service (08:02)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5503' class="J-media-item studyvideo">5-6 Controller之经验总结 (04:39)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 模板引擎Twig</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5594' class="J-media-item studyvideo">6-1 概述 (03:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5586' class="J-media-item studyvideo">6-2 Twig之与众不同 (05:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5587' class="J-media-item studyvideo">6-3 Twig基本语法 (01:02)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5588' class="J-media-item studyvideo">6-4 Twig文档支持 (00:55)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5589' class="J-media-item studyvideo">6-5 Twig核心概念 (01:05)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5590' class="J-media-item studyvideo">6-6 案例演示之imooc网页结构分析 (09:12)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5591' class="J-media-item studyvideo">6-7 使用Twig整合HTML5Boilerplate (13:20)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5592' class="J-media-item studyvideo">6-8 使用类与类之间的继承关系定义页面 (13:37)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 CSS/JS文件管理</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5794' class="J-media-item studyvideo">7-1 关于网站的资源文件 (02:27)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5795' class="J-media-item studyvideo">7-2 为什么要进行资源文件管理 (03:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5796' class="J-media-item studyvideo">7-3 如何把资源文件交给Symfony2 (06:08)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5788' class="J-media-item studyvideo">7-4 页面间共享CSS和JS文件的通用策略 (02:34)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5789' class="J-media-item studyvideo">7-5 Twig模板基于通用策略的调整 (07:43)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5790' class="J-media-item studyvideo">7-6 使用coffeescript编写JS源文件 (05:37)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5791' class="J-media-item studyvideo">7-7 代码压缩和优化 (03:38)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5792' class="J-media-item studyvideo">7-8 对CSS和JS文件进行版本控制 (05:12)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/5793' class="J-media-item studyvideo">7-9 高级分享—使用多线程进行资源文件dump (01:58)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第8章 数据库操作—Doctrine2（一）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6108' class="J-media-item studyvideo">8-1 使用框架操作数据库的几个基本需求 (07:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6109' class="J-media-item studyvideo">8-2 Doctrine2简介 (01:39)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6110' class="J-media-item studyvideo">8-3 Symfony2为什么选择Doctrine2 (02:45)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6111' class="J-media-item studyvideo">8-4 Symfony2能否使用其他的数据库操作软件 (01:40)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6112' class="J-media-item studyvideo">8-5 使用Doctrine2操作数据库代码演示 (06:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6113' class="J-media-item studyvideo">8-6 Doctrine2的基本概念之实体对象Entity (01:04)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6114' class="J-media-item studyvideo">8-7 Doctrine2的基本概念之对象操作集合Repository (01:04)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6115' class="J-media-item studyvideo">8-8 Doctrine2的基本概念之Proxy (04:18)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6116' class="J-media-item studyvideo">8-9 Doctrine2的基本概念之DQL (03:15)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6117' class="J-media-item studyvideo">8-10 Doctrine2的基本概念之事件监听机制 (01:59)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第9章 数据库操作—Doctrine2（二）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6118' class="J-media-item studyvideo">9-1 使用MySQL workbench进行数据库设计 (07:25)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6119' class="J-media-item studyvideo">9-2 配置Entity (04:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6120' class="J-media-item studyvideo">9-3 生成get-set-repository (02:16)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6121' class="J-media-item studyvideo">9-4 配置数据库连接并使用Doctrine2自动分析并更新数据库结构 (06:32)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6122' class="J-media-item studyvideo">9-5 如何定义Entity和Entity之间的关系 (09:07)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6123' class="J-media-item studyvideo">9-6 如何在定义一对一关系时保持最佳的数据库性能 (01:43)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6124' class="J-media-item studyvideo">9-7 完成Entity的定义 (07:27)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6125' class="J-media-item studyvideo">9-8 使用Doctrine2进行数据操作 (17:10)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第10章 数据库操作—Doctrine2（三）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6296' class="J-media-item studyvideo">10-1 简介 (00:55)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6297' class="J-media-item studyvideo">10-2 使用ParamConverter自动查询URL参数所对应的Entity (05:16)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6298' class="J-media-item studyvideo">10-3 Repository的find方法 (06:52)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6299' class="J-media-item studyvideo">10-4 Repository内的自定义方法 (03:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6300' class="J-media-item studyvideo">10-5 使用Doctrine的生命周期管理功能 (08:39)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6301' class="J-media-item studyvideo">10-6 创建和更新Entity的时候自动设置时间字段 (05:57)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6302' class="J-media-item studyvideo">10-7 使用Doctrine的插件实现数据库行为的复用和继承 (04:58)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6303' class="J-media-item studyvideo">10-8 直接调用SQL语句的方式 (01:52)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6304' class="J-media-item studyvideo">10-9 手动控制事务 (02:53)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6305' class="J-media-item studyvideo">10-10 使用完整的DQL进行查询优化 (04:07)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6306' class="J-media-item studyvideo">10-11 在DQL中使用partial查询只含有一部分数据的Entity对象 (01:36)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6307' class="J-media-item studyvideo">10-12 使用构造函数创建对象 (02:28)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6308' class="J-media-item studyvideo">10-13 如何在Symfony2里var_dump一个Entity (05:08)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第11章 带你玩转symfony2表单</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6498' class="J-media-item studyvideo">11-1 概述 (02:05)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6499' class="J-media-item studyvideo">11-2 构成表单的元素—Model (04:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6500' class="J-media-item studyvideo">11-3 构成表单的元素—View (01:52)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6501' class="J-media-item studyvideo">11-4 构成表单的元素—Controller (00:54)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6502' class="J-media-item studyvideo">11-5 洪大师带你三分钟创建一个最简单的表单 (12:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6503' class="J-media-item studyvideo">11-6 玩转表单的五阶段之创建表单 (16:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6504' class="J-media-item studyvideo">11-7 玩转表单的五阶段之修改表单样式 (11:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6505' class="J-media-item studyvideo">11-8 玩转表单的五阶段之提交表单 (05:53)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6506' class="J-media-item studyvideo">11-9 玩转表单的五阶段之验证表单（一） (18:58)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6507' class="J-media-item studyvideo">11-10 玩转表单的五阶段之验证表单（二） (03:25)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6508' class="J-media-item studyvideo">11-11 玩转表单的五阶段之处理通过表单提交的数据 (06:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6509' class="J-media-item studyvideo">11-12 经验及知识分享 (06:41)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第12章 知识扩展</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/6945' class="J-media-item studyvideo">12-1 序言 (00:59)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6946' class="J-media-item studyvideo">12-2 关于自定义配置 (10:04)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6947' class="J-media-item studyvideo">12-3 关于Service (08:38)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6955' class="J-media-item studyvideo">12-4 如何编写测试用例 (08:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6948' class="J-media-item studyvideo">12-5 如何跑测试脚本 (11:16)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/6949' class="J-media-item studyvideo">12-6 实用的第三方Bundle介绍 (02:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/7013' class="J-media-item studyvideo">12-7 课程总结 (01:59)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/1050387/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/5472e4a70001ead602200220-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/1050387/courses?sort=publish" target="_blank">洪涛</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">其它</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">1、熟练掌握PHP基本语法知识
+2、熟练掌握PHP面向对象思想
+3、具有1-2年开发经验</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">1、如何搭建Symfony2的开发环境
+2、如何使用Symfony2框架进行网站开发
+3、如何部署Symfony2项目</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

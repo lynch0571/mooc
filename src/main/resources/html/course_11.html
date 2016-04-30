@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+jQuery基础课程_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="本课程分为11个章节，前四个章节重点介绍jQuery中选择器的使用方法，第五、六章节介绍jQuery如何操作DOM元素，在第七、八章中，详细介绍jQuery中的动画特效和Ajax的调用过程，从第九章到最后，着重介绍与jQuery相关的常用插件和UI插件的使用方法。"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 11,
+    name: 'jQuery基础课程',
+    pic: 'http://img.mukewang.com/53daeec60001058206000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=fe">前端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=jquery">jQuery</a>
+                <i class="path-split">\</i><a href="/view/11"><span>jQuery基础课程</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">jQuery基础课程</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>中级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong> 9</strong>小时<strong>57</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>131752</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="11">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/55af49ad0001e46106000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/64" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.4</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <em>
+                <i class="icon-star2"></i>
+                <i class="icon-star_half"></i>
+            </em>
+                                </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=11" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=11" target="_blank">273人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/11"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/11"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/11"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/11?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/11">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 初识jQuery （站在巨人的肩膀上）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/64' class="J-media-item programme">1-1 环境搭建
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/65' class="J-media-item programme">1-2 jQuery初体验
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 jQuery 基础选择器</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/73' class="J-media-item programme">2-1 #id 选择器(使用身份证号来找人)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/79' class="J-media-item programme">2-2 element 选择器(寻找铅笔)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/80' class="J-media-item programme">2-3 .class 选择器(寻找红色铅笔)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/81' class="J-media-item programme">2-4 * 选择器(取走全部铅笔)
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/82' class="J-media-item programme">2-5 sele1,sele2,seleN选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/86' class="J-media-item programme">2-6 ance desc选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/95' class="J-media-item programme">2-7 parent &gt; child选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/96' class="J-media-item programme">2-8 prev + next选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/98' class="J-media-item programme">2-9 prev ~ siblings选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/6130' class="J-media-item practise">2-10 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 jQuery过滤性选择器</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/110' class="J-media-item programme">3-1  :first过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/115' class="J-media-item programme">3-2 :eq(index)过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/116' class="J-media-item programme">3-3  :contains(text)过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/118' class="J-media-item programme">3-4 :has(selector)过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/119' class="J-media-item programme">3-5  :hidden过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/122' class="J-media-item programme">3-6 :visible过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/124' class="J-media-item programme">3-7 [attribute=value]属性选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/125' class="J-media-item programme">3-8  [attribute!=value]属性选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/127' class="J-media-item programme">3-9  [attribute*=value]属性选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/129' class="J-media-item programme">3-10 :first-child子元素过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/130' class="J-media-item programme">3-11 :last-child子元素过滤选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1088' class="J-media-item practise">3-12 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/1103' class="J-media-item programme">3-13 编程练习
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 jQuery表单选择器</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/105' class="J-media-item programme">4-1 :input表单选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/106' class="J-media-item programme">4-2  :text表单文本选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/107' class="J-media-item programme">4-3  :password表单密码选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/108' class="J-media-item programme">4-4  :radio单选按钮选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/109' class="J-media-item programme">4-5  :checkbox复选框选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/171' class="J-media-item programme">4-6 :submit提交按钮选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/172' class="J-media-item programme">4-7 :image图像域选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/173' class="J-media-item programme">4-8 :button表单按钮选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/174' class="J-media-item programme">4-9  :checked选中状态选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/175' class="J-media-item programme">4-10 :selected选中状态选择器
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1089' class="J-media-item practise">4-11 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 jQuery 操作DOM元素</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/185' class="J-media-item programme">5-1 使用attr()方法控制元素的属性
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/186' class="J-media-item programme">5-2 操作元素的内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/187' class="J-media-item programme">5-3 操作元素的样式
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/188' class="J-media-item programme">5-4 移除属性和样式
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/189' class="J-media-item programme">5-5 使用append()方法向元素内追加内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/190' class="J-media-item programme">5-6 使用appendTo()方法向被选元素内插入内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/192' class="J-media-item programme">5-7 使用before()和after()在元素前后插入内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/193' class="J-media-item programme">5-8 使用clone()方法复制元素
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/194' class="J-media-item programme">5-9 替换内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/195' class="J-media-item programme">5-10 使用wrap()和wrapInner()方法包裹元素和内容
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/196' class="J-media-item programme">5-11 使用each()方法遍历元素
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/197' class="J-media-item programme">5-12 使用remove()和empty()方法删除元素
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1093' class="J-media-item practise">5-13 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 jQuery 事件与应用</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/266' class="J-media-item programme">6-1 页面加载时触发ready()事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/267' class="J-media-item programme">6-2 使用bind()方法绑定元素的事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/268' class="J-media-item programme">6-3 使用hover()方法切换事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/269' class="J-media-item programme">6-4 使用toggle()方法绑定多个函数
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/270' class="J-media-item programme">6-5 使用unbind()方法移除元素绑定的事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/271' class="J-media-item programme">6-6 使用one()方法绑定元素的一次性事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/272' class="J-media-item programme">6-7 调用trigger()方法手动触发指定的事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/273' class="J-media-item programme">6-8 文本框的focus和blur事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/274' class="J-media-item programme">6-9 下拉列表框的change事件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/275' class="J-media-item programme">6-10 调用live()方法绑定元素的事件 
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1094' class="J-media-item practise">6-11 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 jQuery 动画特效</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/327' class="J-media-item programme">7-1 调用show()和hide()方法显示和隐藏元素
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/328' class="J-media-item programme">7-2 动画效果的show()和hide()方法
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/329' class="J-media-item programme">7-3 调用toggle()方法实现动画切换效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/330' class="J-media-item programme">7-4 使用slideUp()和slideDown()方法的滑动效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/331' class="J-media-item programme">7-5 使用slideToggle()方法实现图片“变脸”效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/332' class="J-media-item programme">7-6 使用fadeIn()与fadeOut()方法实现淡入淡出效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/333' class="J-media-item programme">7-7 使用fadeTo()方法设置淡入淡出效果的不透明度
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/334' class="J-media-item programme">7-8 调用animate()方法制作简单的动画效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/335' class="J-media-item programme">7-9 调用animate()方法制作移动位置的动画
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/336' class="J-media-item programme">7-10 调用stop()方法停止当前所有动画效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/337' class="J-media-item programme">7-11 调用delay()方法延时执行动画效果
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1095' class="J-media-item practise">7-12 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/1104' class="J-media-item programme">7-13 编程练习
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第8章 jQuery 实现Ajax应用</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/338' class="J-media-item programme">8-1 使用load()方法异步请求数据
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/339' class="J-media-item programme">8-2 使用getJSON()方法异步加载JSON格式数据 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/340' class="J-media-item programme">8-3 使用getScript()方法异步加载并执行js文件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/341' class="J-media-item programme">8-4 使用get()方法以GET方式从服务器获取数据
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/342' class="J-media-item programme">8-5 使用post()方法以POST方式从服务器发送数据
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/343' class="J-media-item programme">8-6 使用serialize()方法序列化表单元素值
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/344' class="J-media-item programme">8-7 使用ajax()方法加载服务器数据
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/345' class="J-media-item programme">8-8 使用ajaxSetup()方法设置全局Ajax默认选项
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/346' class="J-media-item programme">8-9 使用ajaxStart()和ajaxStop()方法
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1096' class="J-media-item practise">8-10 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/1105' class="J-media-item programme">8-11 编程练习
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第9章 jQuery 常用插件</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/421' class="J-media-item programme">9-1 表单验证插件——validate
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/422' class="J-media-item programme">9-2 表单插件——form 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/423' class="J-media-item programme">9-3 图片灯箱插件——lightBox
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/424' class="J-media-item programme">9-4 图片放大镜插件——jqzoom
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/425' class="J-media-item programme">9-5 cookie插件——cookie
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/426' class="J-media-item programme">9-6 搜索插件——autocomplete
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/427' class="J-media-item programme">9-7 右键菜单插件——contextmenu 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/428' class="J-media-item programme">9-8 自定义对象级插件——lifocuscolor插件
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/429' class="J-media-item programme">9-9 自定义类级别插件—— twoaddresult
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1097' class="J-media-item practise">9-10 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第10章 jQuery UI型插件</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/440' class="J-media-item programme">10-1 拖曳插件——draggable
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/441' class="J-media-item programme">10-2  放置插件——droppable
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/442' class="J-media-item programme">10-3 拖曳排序插件——sortable 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/443' class="J-media-item programme">10-4 面板折叠插件——accordion
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/444' class="J-media-item programme">10-5  选项卡插件——tabs
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/445' class="J-media-item programme">10-6 对话框插件——dialog 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/446' class="J-media-item programme">10-7 菜单工具插件——menu
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/447' class="J-media-item programme">10-8 微调按钮插件——spinner 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/448' class="J-media-item programme">10-9 工具提示插件——tooltip
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1099' class="J-media-item practise">10-10 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第11章 jQuery 工具类函数</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/450' class="J-media-item programme">11-1 获取浏览器的名称与版本信息
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/451' class="J-media-item programme">11-2 检测浏览器是否属于W3C盒子模型
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/452' class="J-media-item programme">11-3 检测对象是否为空
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/453' class="J-media-item programme">11-4 检测对象是否为原始对象
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/474' class="J-media-item programme">11-5 检测两个节点的包含关系 
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/475' class="J-media-item programme">11-6 字符串操作函数
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/476' class="J-media-item programme">11-7 URL操作函数
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/477' class="J-media-item programme">11-8 使用$.extend()扩展工具函数
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/478' class="J-media-item programme">11-9 使用$.extend()扩展Object对象
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1100' class="J-media-item practise">11-10 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/1106' class="J-media-item programme">11-11 编程挑战
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第12章 jQuery在线聊天室</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1283' class="J-media-item studyvideo">12-1 聊天室基本功能介绍 (02:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1284' class="J-media-item studyvideo">12-2 聊天室案例页面效果展示 (09:00)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1285' class="J-media-item studyvideo">12-3 聊天室数据流程分析 (03:32)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1286' class="J-media-item studyvideo">12-4 登录页面开发 (15:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1287' class="J-media-item studyvideo">12-5 聊天室主页代码功能分析 (05:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1290' class="J-media-item studyvideo">12-6 简短回顾聊天主页的功能 (01:46)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1291' class="J-media-item studyvideo">12-7 “发送”按钮代码功能解析 (05:56)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1293' class="J-media-item studyvideo">12-8 “表情图标”的添加代码分析 (06:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1294' class="J-media-item studyvideo">12-9 点击“表情图标”时的事件代码说明 (03:47)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1295' class="J-media-item studyvideo">12-10 定时获取聊天内容和在线人员信息的功能实现 (06:54)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1296' class="J-media-item studyvideo">12-11 通过页面元素侦察Ajax请求过程的状态 (02:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1297' class="J-media-item studyvideo">12-12 案例代码小结说明 (04:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1428' class="J-media-item practise">12-13 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/1429' class="J-media-item programme">12-14 挑战题
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/100338/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/53a69d0b0001499907400740-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/100338/courses?sort=publish" target="_blank">陶老实</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">其它</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">您需要知道HTML、JavaScript和CSS样式的基础语法，并能使用这些语法构建一个DIV+CSS结构页的完整过程。</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">通过本课程的学习，您可以由浅入深地全面了解jQuery框架的基础知识，掌握并使用jQuery操控DOM元素的方法与技巧，深入理解jQuery框架提供的各类API与函数的工作原理和自定义jQuery插件的各项技能。</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+JAVA遇见HTML——JSP篇_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="亲，这里有资深讲师为初学者量身打造的Java Web入门级课程JSP，讲师将通过大量的案例向您展示JavaWeb开发环境搭建、工具使用和JSP的基本语法，深入理解Java Web开发思想，最终使您能独立开发简单的Java Web应用。"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 166,
+    name: 'JAVA遇见HTML——JSP篇',
+    pic: 'http://img.mukewang.com/57035ea300015cad06000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=be">后端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=java">JAVA</a>
+                <i class="path-split">\</i><a href="/view/166"><span>JAVA遇见HTML——JSP篇</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">JAVA遇见HTML——JSP篇</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>初级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong> 7</strong>小时<strong> 0</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>70983</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="166">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/57035ea40001506906000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/2875" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.5</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=166" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=166" target="_blank">164人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/166"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/166"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/166"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/166?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/166">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+  <div id="notice" class="clearfix">
+  <div class="l"> <strong>课程公告:</strong> <a  href="javascript:void(0)">课程源码已上传。另外，JSP课程视频已更新完毕，敬请大家关注后续的Servlet课程。</a> </div> 
+  </div>
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 JAVA WEB简介</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2875' class="J-media-item studyvideo">1-1 什么是WEB应用程序 (04:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2876' class="J-media-item studyvideo">1-2 静态网页与动态网页 (01:39)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2933' class="J-media-item practise">1-3 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2877' class="J-media-item studyvideo">1-4 搭建JAVA WEB开发环境 (05:27)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2925' class="J-media-item studyvideo">1-5 Tomcat目录结构 (03:00)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2926' class="J-media-item studyvideo">1-6 手工编写第一个Java Web程序 (04:42)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2927' class="J-media-item studyvideo">1-7 WEB-INF目录详解 (05:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2929' class="J-media-item studyvideo">1-8 MyEclipse开发Java Web程序 (10:43)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2930' class="J-media-item studyvideo">1-9 理解Web项目虚拟路径 (03:16)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2931' class="J-media-item studyvideo">1-10 Eclipse开发Java Web程序 (05:23)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2932' class="J-media-item studyvideo">1-11 修改Tomcat服务器默认端口号 (02:40)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2935' class="J-media-item practise">1-12 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 JSP基础语法</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2938' class="J-media-item studyvideo">2-1 JSP简介 (01:34)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2939' class="J-media-item studyvideo">2-2  常见动态网站开发技术对比 (03:20)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2940' class="J-media-item studyvideo">2-3 JSP页面元素简介及page指令 (06:28)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2942' class="J-media-item practise">2-4 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2943' class="J-media-item studyvideo">2-5 JSP注释 (03:38)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2944' class="J-media-item practise">2-6 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2945' class="J-media-item studyvideo">2-7 JSP脚本 (02:01)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2946' class="J-media-item studyvideo">2-8 JSP声明 (02:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2947' class="J-media-item studyvideo">2-9 JSP表达式 (02:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2950' class="J-media-item studyvideo">2-10 JSP页面生命周期 (11:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2951' class="J-media-item practise">2-11 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2954' class="J-media-item studyvideo">2-12 阶段项目 (09:07)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 JSP内置对象（上）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3294' class="J-media-item studyvideo">3-1 JSP内置对象简介 (02:18)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3297' class="J-media-item practise">3-2 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3295' class="J-media-item studyvideo">3-3 web程序的请求与响应模式 (02:16)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3296' class="J-media-item studyvideo">3-4 out对象 (09:55)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3308' class="J-media-item practise">3-5 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3299' class="J-media-item studyvideo">3-6 get与post提交方式的区别 (07:27)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3300' class="J-media-item studyvideo">3-7 request对象（上） (15:07)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3301' class="J-media-item studyvideo">3-8 request对象（下） (07:51)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3304' class="J-media-item practise">3-9 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3305' class="J-media-item studyvideo">3-10 response对象 (09:07)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3306' class="J-media-item studyvideo">3-11 请求重定向与请求转发的区别 (07:34)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3307' class="J-media-item practise">3-12 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 JSP内置对象（下）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3584' class="J-media-item studyvideo">4-1 什么是session (03:05)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3590' class="J-media-item studyvideo">4-2 session对象 (16:49)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3611' class="J-media-item practise">4-3 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3591' class="J-media-item studyvideo">4-4 session的生命周期 (14:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3614' class="J-media-item practise">4-5 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3595' class="J-media-item studyvideo">4-6 application对象 (06:32)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3612' class="J-media-item practise">4-7 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3596' class="J-media-item studyvideo">4-8 page对象 (03:47)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3598' class="J-media-item studyvideo">4-9 pageContext对象和config对象 (08:42)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3601' class="J-media-item studyvideo">4-10 exception对象 (06:23)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3604' class="J-media-item studyvideo">4-11 阶段案例——实现用户登录 (11:48)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 JavaBeans</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3955' class="J-media-item studyvideo">5-1 本章简介 (00:44)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3956' class="J-media-item studyvideo">5-2 JavaBean简介及设计原则 (02:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3957' class="J-media-item studyvideo">5-3 什么是JSP动作元素 (02:25)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3958' class="J-media-item studyvideo">5-4 什么普通方式应用JavaBean (05:30)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3959' class="J-media-item studyvideo">5-5 useBean动作元素 (04:31)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3965' class="J-media-item studyvideo">5-6 setProperty (15:15)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3967' class="J-media-item studyvideo">5-7 getProperty (02:33)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3970' class="J-media-item studyvideo">5-8 JavaBean四个作用域范围 (15:26)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3990' class="J-media-item practise">5-9 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3971' class="J-media-item studyvideo">5-10 Model1简介 (03:22)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3989' class="J-media-item practise">5-11 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3974' class="J-media-item studyvideo">5-12 阶段项目 (08:01)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 JSP状态管理</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/4369' class="J-media-item studyvideo">6-1 http协议的无状态性 (02:51)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4370' class="J-media-item studyvideo">6-2 Cookie概述 (03:48)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4371' class="J-media-item studyvideo">6-3 JSP页面中创建与使用Cookie (02:40)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4377' class="J-media-item studyvideo">6-4 案例：Cookie在登录中的应用 (23:07)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4372' class="J-media-item studyvideo">6-5 Session与Cookie的对比 (02:02)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/4537' class="J-media-item practise">6-6 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/4538' class="J-media-item practise">6-7 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 JSP指令与动作元素</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/4518' class="J-media-item studyvideo">7-1 include指令 (05:45)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4519' class="J-media-item studyvideo">7-2 include动作 (02:48)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4520' class="J-media-item studyvideo">7-3 include指令与include动作的区别 (08:36)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4521' class="J-media-item studyvideo">7-4 forward动作 (07:20)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4522' class="J-media-item studyvideo">7-5 param动作 (05:35)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/4539' class="J-media-item practise">7-6 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第8章 案例项目</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/4708' class="J-media-item studyvideo">8-1 项目总体介绍 (03:37)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4709' class="J-media-item studyvideo">8-2 项目原型 (02:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4710' class="J-media-item studyvideo">8-3 DBHelper类设计 (08:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4711' class="J-media-item studyvideo">8-4 商品实体类设计 (03:55)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4712' class="J-media-item studyvideo">8-5 获取所有商品资料方法的实现 (07:34)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4713' class="J-media-item studyvideo">8-6 所有商品信息显示 (07:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4714' class="J-media-item studyvideo">8-7 商品详细信息显示 (07:06)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4720' class="J-media-item studyvideo">8-8 使用Cookie实现保存商品浏览记录 (20:48)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/256229/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/53df3b7a0001b45c01400140-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/256229/courses?sort=publish" target="_blank">milanlover</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">JAVA开发工程师</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">Hi，我是JSP。为了让您更好的了解我，请先学习我的小伙伴JAVA和HTML。</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">学完JSP，您可以掌握JSP基本语法，理解Java Web开发思想，进而能独立开发简单的Java Web应用。</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>

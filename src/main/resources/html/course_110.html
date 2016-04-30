@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+Java入门第三季_技术学习教程_慕课网
+</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+
+<meta name="Keywords" content="" />
+
+
+<meta name="Description" content="在本课程中，@陈码农 携手 @laurenyany 带领小伙伴们进一步探索 Java 的奥秘，将带来关于异常处理、集合框架、字符串的操作和常用类的使用的相关介绍。不容错过的精彩，快来加入吧！！"/>
+
+
+
+
+<script type="text/javascript">
+
+        
+    eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[235-9a-dfg]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('!3(){5 6=a;5 7=3(t){9(typeof b=="undefined"){c d}5 2=f b();try{2.open("GET","/index/ajaxscsts?s="+t,true);2.onreadystatechange=3(){9(2.readyState==4&&2.status==200){9(t&&2.responseText==1)window.location.reload()}};2.send()}catch(e){c d}};5 8=f Image();8.onload=3(){clearTimeout(6);6=a;7(0)};8.onerror=3(){7(1)};6=setTimeout(3(){7(1)},3000);8.src=\'http://g.mukewang.com/g/img/common/logo.png\'}()',[],17,'||xhr|function||var|timer|cdnpost|imgobj|if|null|XMLHttpRequest|return|false||new|static'.split('|'),0,{}))
+    
+      var OP_CONFIG={"module":"course","page":"learn"};
+  var isLogin = 0;
+var is_choice = "";
+  var seajsTimestamp="v=201604211612";
+  
+</script>
+
+
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 110,
+    name: 'Java入门第三季',
+    pic: 'http://img.mukewang.com/5703604a0001694406000338-240-135.jpg',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+</script>
+
+
+
+<link rel="stylesheet" href="http://static.mukewang.com/static/css/??base.css,common/common-less.css,course/common-less.css,course/learn-less.css?v=1461923412" type="text/css" />
+</head>
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo"><a href="/" target="_self" class="hide-text">慕课网</a></div>
+
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                                <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                                <li>
+                    <a href="/course/list" class="active" target="_self">课程</a>
+                </li>
+                <li>
+                    <a href="http://coding.imooc.com" target="_self">实战<i class="icn-new"></i></a>
+                </li>
+                <li><a href="/course/program"  target="_self">计划</a></li>
+                <li><a href="/wenda"  target="_self">猿问</a></li>
+                <li><a href="/article"  target="_self">手记</a></li>
+                
+        </ul>
+
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg">
+                    </div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+                <!--
+        <div class="app-down-area r">
+            <a href="/mobile/app">
+                <i class="header-app-icon"></i>慕课APP
+            </a>
+        </div>
+        -->
+        
+        
+        <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+            <div class="search-area min" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+
+<div class="course-infos">
+  <div class="w pr">
+    <div class="path">  
+        <a href="/course/list">课程</a>
+                <i class="path-split">\</i><a href="/course/list?c=be">后端开发</a>
+                        <i class="path-split">\</i><a href="/course/list?c=java">JAVA</a>
+                <i class="path-split">\</i><a href="/view/110"><span>Java入门第三季</a></span>
+    </div>
+    <div class="hd">
+      <h2 class="l">Java入门第三季</h2>
+          </div>
+    <div class="statics clearfix">
+      <div class="static-item ">
+        <span class="meta-value"><strong>初级</strong></span>
+        <span class="meta">难度</span>
+        <em></em>
+      </div>
+      <div class="static-item static-time">
+        <span class="meta-value"><strong> 5</strong>小时<strong> 0</strong>分</span>
+        <span class="meta">时长</span>
+        <em></em>
+      </div>
+      <div class="static-item">
+        <span class="meta-value"><strong>127418</strong></span>
+        <span class="meta">学习人数</span>
+        <em></em>
+      </div>
+      <!-- <div class="static-item">
+        <span class="meta-value"><strong>4.8分</strong></span>
+        <span class="meta">
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+          <i class="meta-star"></i>
+        </span>
+        <em></em>
+      </div> -->
+    </div>
+    <div class="extra">
+      <!-- credit -->
+      <div class="share-rl-tips share-posi js-share-statue">
+          <span>分享即可 +</span><strong>1积分</strong>
+          <span class="rule-arrow"></span>
+      </div>
+      <!-- share -->
+      <div class="share-action r bdsharebuttonbox">
+        分享
+        <a href="javascript:;" class="share wx js-share" data-cmd="weixin"></a>
+        <a href="javascript:;" class="share qq js-share" data-cmd="qzone"></a>
+        <a href="javascript:;" class="share sina js-share" data-cmd="tsina"></a>
+      </div>
+      <i class="split-line r"></i>
+            <a href="javascript:;" data-cmd="follow" class="follow-action r js-follow-action" data-cid="110">
+        关注
+      </a>
+          </div>
+  </div>
+  <div class="info-bg" id="js-info-bg">
+    <div class="cover-img-wrap">
+      <img data-src="http://img.mukewang.com/5703604a000146fa06000338.jpg" alt="" style="display: none" id="js-cover-img">
+    </div>
+    <div class="cover-mask"></div>
+  </div>
+</div>
+<div class="course-info-main clearfix w">
+  
+  <div class="info-bar clearfix">
+  <a href="/video/1695" target="_blank" class="btn-red start-study-btn r J-learn-course">开始学习</a>
+      <div class="score-info">
+    <div class="satisfaction-degree-info">
+        <h3>综合评分</h3>
+        <h4>9.6</h4>
+        <div class="star-box">
+                                                <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                        <i class="icon-star2 active"></i>
+                                            </div>
+    </div><!--satisfaction-degree-info end-->
+        <div class="info-box clearfix">
+        <span>发表评价即可 <em>+1积分</em></span>
+        <a href="/course/coursescore?id=110" target="_blank">立即去评价</a>
+    </div>
+            <p class="person-num noLogin"><a href="/course/coursescore?id=110" target="_blank">290人评价</a></p>
+    </div><!--score-info end--></div>
+  <div class="content-wrap clearfix">
+    <div class="content">
+      <div class="mod-tab-menu">
+	<ul class="course-menu clearfix">
+		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/110"><span>章节</span></a></li>
+		<li><a id="commentOn" class="" href="/comment/110"><span>评论</span></a></li>
+		<li><a id="qaOn" class="" href="/qa/110"><span>问答</span></a></li>
+		<li><a id="noteOn" class="" href="/note/110?sort=last"><span>笔记</span></a></li>
+	    <!--
+        <li><a id="wikiOn" class="" href="/wiki/110">WIKI</a></li>
+        -->
+	</ul>
+	</div>
+
+      
+
+<div class="mod-chapters">
+            <div class="chapter chapter-active" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第1章 异常与异常处理</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/1695' class="J-media-item studyvideo">1-1 异常简介 (06:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1708' class="J-media-item studyvideo">1-2 使用try..catch..finally实现异常处理 (05:08)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3069' class="J-media-item studyvideo">1-3 通过案例学习 try...catch...finally (14:00)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1712' class="J-media-item practise">1-4 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1709' class="J-media-item studyvideo">1-5 Java 中的异常抛出以及自定义异常 (04:32)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1710' class="J-media-item practise">1-6 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1706' class="J-media-item studyvideo">1-7 Java 中的异常链 (06:09)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/1711' class="J-media-item practise">1-8 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/1741' class="J-media-item studyvideo">1-9 经验总结 (02:20)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第2章 认识 Java 中的字符串</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/2202' class="J-media-item programme">2-1 什么是 Java 中的字符串
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2203' class="J-media-item programme">2-2 Java 中字符串的不变性
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2205' class="J-media-item programme">2-3 Java 中 String 类的常用方法 Ⅰ
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2206' class="J-media-item programme">2-4 Java 中的 String  类常用方法 Ⅱ
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2207' class="J-media-item programme">2-5 认识 Java 中的 StringBuilder 类
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2208' class="J-media-item programme">2-6 Java 中的 StringBuilder 类的常用方法
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2214' class="J-media-item practise">2-7 练习题
+                                               </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第3章 Java 中必须了解的常用类</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                <a target="_blank" href='/code/2249' class="J-media-item programme">3-1 Java 中的包装类
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2250' class="J-media-item programme">3-2 Java 中基本类型和包装类之间的转换
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/3714' class="J-media-item practise">3-3 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2251' class="J-media-item programme">3-4 Java 中基本类型和字符串之间的转换
+                                                </a>
+                                    </li>
+                            <li>
+                                                               <a target="_blank" href='/ceping/2368' class="J-media-item practise">3-5 练习题
+                                               </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2335' class="J-media-item programme">3-6 使用 Date 和 SimpleDateFormat 类表示时间
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2340' class="J-media-item programme">3-7 Calendar 类的应用
+                                                </a>
+                                    </li>
+                            <li>
+                                                                <a target="_blank" href='/code/2342' class="J-media-item programme">3-8 使用 Math 类操作数据
+                                                </a>
+                                    </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第4章 Java 中的集合框架（上）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/2415' class="J-media-item studyvideo">4-1 Java 中的集合框架概述 (09:50)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2673' class="J-media-item studyvideo">4-2 Collection 接口 &amp; List 接口简介 (02:28)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2779' class="J-media-item studyvideo">4-3 学生选课--创建学生类和课程类 (05:03)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2860' class="J-media-item studyvideo">4-4 学生选课---添加课程 Ⅰ  (12:18)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2861' class="J-media-item studyvideo">4-5 学生选课---添加课程 Ⅱ (06:42)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2910' class="J-media-item studyvideo">4-6 学生选课—课程查询 (11:15)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/2911' class="J-media-item studyvideo">4-7 学生选课—课程修改 (02:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3214' class="J-media-item studyvideo">4-8 学生选课—课程删除 (05:57)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3217' class="J-media-item studyvideo">4-9 学生选课---应用泛型管理课程 Ⅰ (12:53)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3216' class="J-media-item studyvideo">4-10 学生选课---应用泛型管理课程 Ⅱ (07:48)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3227' class="J-media-item studyvideo">4-11 学生选课---通过 Set 集合管理课程 (15:03)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第5章 Java 中的集合框架（中）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3293' class="J-media-item studyvideo">5-1 Map &amp; HashMap 简介 (03:36)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3354' class="J-media-item studyvideo">5-2 学生选课---使用 Map 添加学生 (14:25)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3369' class="J-media-item studyvideo">5-3 学生选课---删除 Map 中的学生 (08:23)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3491' class="J-media-item studyvideo">5-4 学生选课---修改 Map 中的学生 (06:53)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第6章 Java 中的集合框架（下）</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/3731' class="J-media-item studyvideo">6-1 学生选课---判断 List 中课程是否存在  (18:29)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3760' class="J-media-item studyvideo">6-2 学生选课---判断 Set 中课程是否存在  (07:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/3744' class="J-media-item studyvideo">6-3 学生选课---获取 List  中课程的位置 (04:21)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4039' class="J-media-item studyvideo">6-4 学生选课---判断 Map 中是否包含指定的 key 和 value (10:17)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4254' class="J-media-item studyvideo">6-5 应用 Collections.sort() 实现 List 排序 (14:53)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4310' class="J-media-item studyvideo">6-6 学生选课---尝试对学生序列排序 (04:14)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4314' class="J-media-item studyvideo">6-7 Comparable &amp; Comparator 简介 (04:19)
+                                                        </a>
+                                                            </li>
+                            <li>
+                                                                                            <a target="_blank" href='/video/4315' class="J-media-item studyvideo">6-8 学生选课--- 实现学生序列排序 (14:33)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+                <div class="chapter" >
+                            <h3>
+                                            <span class="icon-plus"></span>
+                                        <strong><i class="state-expand"></i>第7章 综合实战</strong>
+                </h3>
+                        <ul class="video">
+                            <li>
+                                                                                            <a target="_blank" href='/video/5475' class="J-media-item studyvideo">7-1 简易扑克牌游戏 (06:06)
+                                                        </a>
+                                                            </li>
+                        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="aside r">
+      <div class="bd">
+
+      <div class="box mb40">
+      <h4>讲师提示</h4>
+            <div class="teacher-info">
+        <a href="/u/135109/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/537eafe80001e68c06400672-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/135109/courses?sort=publish" target="_blank">陈码农</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job"></span>
+      </div>
+            <div class="teacher-info">
+        <a href="/u/112258/courses?sort=publish" target="_blank">
+          <img src='http://img.mukewang.com/user/535f03950001915501400140-80-80.jpg' width='80' height='80' />
+        </a>
+        <span class="tit">
+          <a href="/u/112258/courses?sort=publish" target="_blank">laurenyang</a><i class="icon-imooc"></i>
+        </span>
+        <span class="job">JAVA开发工程师</span>
+      </div>
+                  <div class="course-info-tip">
+                <dl class="first">
+          <dt>课程须知</dt>
+          <dd class="autowrap">此部分为 Java 课程的进阶内容，适合具有一定 Java 基础的伙伴们学习，如果您是新手，建议您移步 《Java入门第一季》 和 《Java入门第二季》，在理解并掌握面向对象相关知识后再回来进修。</dd>
+        </dl>
+                        <dl>
+          <dt>老师告诉你能学到什么？</dt>
+          <dd class="autowrap">本课程将学习 Java 中的异常处理、集合框架、字符串、常用类等，逐步学习掌握 Java 高级技术。</dd>
+        </dl>
+              </div>
+        </div>
+  
+      
+</div>    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div id="footer" >
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                        <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                    </ul>
+                </div>
+                <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="J_GotoTop" class="elevator">
+    <a class="elevator-weixin" href="javascript:;">
+        <div class="elevator-weixin-box">
+        </div>
+    </a>
+    <a class="elevator-msg" href="/user/feedback" target="_blank" id="feedBack"></a>
+    <a class="elevator-app" href="http://www.imooc.com/mobile/app" >
+        <div class="elevator-app-box">
+        </div>
+    </a>
+    <a class="elevator-top" href="javascript:;" style="display:none" id="backTop"></a>
+</div>
+
+
+
+<!--script-->
+<script src="/passport/static/scripts/ssologin.js"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v=201604211612"></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'http://img.mukewang.com/static/img/common/logo.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'http://www.mukewang.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2788596354'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  })();
+</script>
+<div class="mask"></div>
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>
