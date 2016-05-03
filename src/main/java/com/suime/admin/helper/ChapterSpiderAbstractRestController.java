@@ -6,6 +6,8 @@ import java.util.List;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import com.suime.context.model.Chapter;
+
 
 /**
  * 章节爬虫抽象控制类
@@ -38,5 +40,27 @@ public abstract class ChapterSpiderAbstractRestController extends BaseSpiderAbst
 	public int getChapterCount(Document doc) {
 		Elements chapterElements = doc.select(".chapter strong");
 		return chapterElements.size();
+	}
+	
+	public List<Chapter> getChaptersByCourseId(int courseId,String type){
+		Document doc=null;
+		if(type.equals("net")){
+			doc=this.getNetDocumentByCourseId(courseId);
+		}else{
+			doc=this.getLocalDocumentByCourseId(courseId);
+		}
+		if(doc==null){
+			return null;
+		}
+		List<Chapter> chapters=new ArrayList<Chapter>();
+		for(int i=0;i<getChapterCount(doc);i++){
+			Chapter c=new Chapter();
+			c.setCourseId(courseId);
+			c.setNum((byte) (i+1));
+			c.setName(getChapterNames(doc).get(i));
+			c.setStatus((byte) 0);
+			chapters.add(c);
+		}
+		return chapters;
 	}
 }
