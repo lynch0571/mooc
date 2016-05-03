@@ -5,6 +5,7 @@
 
 	<resultMap id="resultMap" type="com.suime.context.model.Chapter">
 		<id column="id" property="id"/>
+		<result column="num" property="num"/>
 		<result column="name" property="name"/>
 		<result column="course_id" property="courseId"/>
 		<result column="create_time" property="createTime"/>
@@ -37,7 +38,7 @@
 	</sql>
 
 	<sql id="sqlColumns">
-		id, name, course_id, create_time, update_time, status
+		id, num, name, course_id, create_time, update_time, status
 	</sql>
 
 	<insert id="save" parameterType="com.suime.context.model.Chapter" keyProperty="id">
@@ -47,8 +48,8 @@
 		)
 		values
 		(
-		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{courseId, jdbcType=INTEGER}, #{createTime, jdbcType=TIMESTAMP}, 
-		#{updateTime, jdbcType=TIMESTAMP}, #{status, jdbcType=TINYINT}
+		#{id, jdbcType=INTEGER}, #{num, jdbcType=TINYINT}, #{name, jdbcType=VARCHAR}, #{courseId, jdbcType=INTEGER}, 
+		#{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{status, jdbcType=TINYINT}
 		)
 	</insert>
 
@@ -82,6 +83,9 @@
 		<set>
 			<if test="id != null">
 				id = #{id, jdbcType=INTEGER},
+			</if>
+			<if test="num != null">
+				num = #{num, jdbcType=TINYINT},
 			</if>
 			<if test="name != null">
 				name = #{name, jdbcType=VARCHAR},

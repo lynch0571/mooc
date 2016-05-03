@@ -5,7 +5,7 @@ import com.suime.context.model.Chapter;
 
 /**
  * chapterService
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 03/05/2016.
  */
 public interface ChapterService extends GenericService<Chapter> {
 

@@ -4,13 +4,18 @@ import java.io.Serializable;
 
 /**
  * chapter 实体类
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 03/05/2016.
  */ 
 public class Chapter implements Serializable {
 	/**
 	 * id
 	 */
 	private Integer id;
+
+	/**
+	 * num
+	 */
+	private Byte num;
 
 	/**
 	 * name
@@ -43,6 +48,14 @@ public class Chapter implements Serializable {
 
 	public Integer getId(){
 		return id;
+	}
+
+	public void setNum(Byte num){
+	this.num=num;
+	}
+
+	public Byte getNum(){
+		return num;
 	}
 
 	public void setName(String name){
