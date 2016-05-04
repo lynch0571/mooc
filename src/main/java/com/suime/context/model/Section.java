@@ -18,6 +18,11 @@ public class Section implements Serializable {
 	private String name;
 
 	/**
+	 * courseId
+	 */
+	private Integer courseId;
+
+	/**
 	 * chapterId
 	 */
 	private Integer chapterId;
@@ -66,6 +71,14 @@ public class Section implements Serializable {
 
 	public String getName(){
 		return name;
+	}
+
+	public void setCourseId(Integer courseId){
+	this.courseId=courseId;
+	}
+
+	public Integer getCourseId(){
+		return courseId;
 	}
 
 	public void setChapterId(Integer chapterId){
