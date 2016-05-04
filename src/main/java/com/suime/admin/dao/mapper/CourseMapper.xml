@@ -54,7 +54,7 @@
 		values
 		(
 		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{teacherId, jdbcType=INTEGER}, #{chapterCount, jdbcType=TINYINT}, 
-		#{sectionCount, jdbcType=TINYINT}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{image, jdbcType=VARCHAR}, 
+		#{sectionCount, jdbcType=INTEGER}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{image, jdbcType=VARCHAR}, 
 		#{path, jdbcType=INTEGER}, #{duration, jdbcType=INTEGER}, #{status, jdbcType=TINYINT}, #{studentCount, jdbcType=INTEGER}
 		)
 	</insert>
@@ -100,7 +100,7 @@
 				chapter_count = #{chapterCount, jdbcType=TINYINT},
 			</if>
 			<if test="sectionCount != null">
-				section_count = #{sectionCount, jdbcType=TINYINT},
+				section_count = #{sectionCount, jdbcType=INTEGER},
 			</if>
 			<if test="createTime != null">
 				create_time = #{createTime, jdbcType=TIMESTAMP},

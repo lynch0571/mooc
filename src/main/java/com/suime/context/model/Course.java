@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * course 实体类
- * Created by Lynch 30/04/2016.
+ * Created by Lynch 05/05/2016.
  */ 
 public class Course implements Serializable {
 	/**
@@ -30,7 +30,7 @@ public class Course implements Serializable {
 	/**
 	 * sectionCount
 	 */
-	private Byte sectionCount;
+	private Integer sectionCount;
 
 	/**
 	 * createTime
@@ -99,11 +99,11 @@ public class Course implements Serializable {
 		return chapterCount;
 	}
 
-	public void setSectionCount(Byte sectionCount){
+	public void setSectionCount(Integer sectionCount){
 	this.sectionCount=sectionCount;
 	}
 
-	public Byte getSectionCount(){
+	public Integer getSectionCount(){
 		return sectionCount;
 	}
 
