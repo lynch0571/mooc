@@ -65,9 +65,9 @@ public abstract class CourseSpiderAbstractRestController extends BaseSpiderAbstr
 	 * @param doc
 	 * @return
 	 */
-	public Byte getSectionCount(Document doc) {
+	public Integer getSectionCount(Document doc) {
 		Elements sectionElements = doc.select(".chapter .J-media-item");
-		return (byte) sectionElements.size();
+		return sectionElements.size();
 	}
 	
 	/**
