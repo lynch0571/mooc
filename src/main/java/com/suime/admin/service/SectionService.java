@@ -5,7 +5,7 @@ import com.suime.context.model.Section;
 
 /**
  * sectionService
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 05/05/2016.
  */
 public interface SectionService extends GenericService<Section> {
 

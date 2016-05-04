@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * section 实体类
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 05/05/2016.
  */ 
 public class Section implements Serializable {
 	/**
@@ -21,6 +21,11 @@ public class Section implements Serializable {
 	 * chapterId
 	 */
 	private Integer chapterId;
+
+	/**
+	 * chapterNum
+	 */
+	private Integer chapterNum;
 
 	/**
 	 * duration
@@ -69,6 +74,14 @@ public class Section implements Serializable {
 
 	public Integer getChapterId(){
 		return chapterId;
+	}
+
+	public void setChapterNum(Integer chapterNum){
+	this.chapterNum=chapterNum;
+	}
+
+	public Integer getChapterNum(){
+		return chapterNum;
 	}
 
 	public void setDuration(Integer duration){

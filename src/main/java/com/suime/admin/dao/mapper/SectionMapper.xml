@@ -7,6 +7,7 @@
 		<id column="id" property="id"/>
 		<result column="name" property="name"/>
 		<result column="chapter_id" property="chapterId"/>
+		<result column="chapter_num" property="chapterNum"/>
 		<result column="duration" property="duration"/>
 		<result column="type" property="type"/>
 		<result column="create_time" property="createTime"/>
@@ -39,7 +40,7 @@
 	</sql>
 
 	<sql id="sqlColumns">
-		id, name, chapter_id, duration, type, create_time, update_time, status
+		id, name, chapter_id, chapter_num, duration, type, create_time, update_time, status
 	</sql>
 
 	<insert id="save" parameterType="com.suime.context.model.Section" keyProperty="id">
@@ -49,8 +50,9 @@
 		)
 		values
 		(
-		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{chapterId, jdbcType=INTEGER}, #{duration, jdbcType=INTEGER}, 
-		#{type, jdbcType=TINYINT}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, #{status, jdbcType=TINYINT}
+		#{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{chapterId, jdbcType=INTEGER}, #{chapterNum, jdbcType=INTEGER}, 
+		#{duration, jdbcType=INTEGER}, #{type, jdbcType=TINYINT}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime, jdbcType=TIMESTAMP}, 
+		#{status, jdbcType=TINYINT}
 		)
 	</insert>
 
@@ -90,6 +92,9 @@
 			</if>
 			<if test="chapterId != null">
 				chapter_id = #{chapterId, jdbcType=INTEGER},
+			</if>
+			<if test="chapterNum != null">
+				chapter_num = #{chapterNum, jdbcType=INTEGER},
 			</if>
 			<if test="duration != null">
 				duration = #{duration, jdbcType=INTEGER},
