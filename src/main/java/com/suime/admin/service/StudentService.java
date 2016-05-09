@@ -5,7 +5,7 @@ import com.suime.context.model.Student;
 
 /**
  * studentService
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 09/05/2016.
  */
 public interface StudentService extends GenericService<Student> {
 

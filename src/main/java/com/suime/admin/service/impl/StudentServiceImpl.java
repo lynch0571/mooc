@@ -12,7 +12,7 @@ import com.suime.admin.service.StudentService;
 
 /**
  * studentService
- * Created by Lynch 29/04/2016.
+ * Created by Lynch 09/05/2016.
  */
 @Service("studentService")
 public class StudentServiceImpl extends GenericServiceImpl<Student> implements StudentService {
