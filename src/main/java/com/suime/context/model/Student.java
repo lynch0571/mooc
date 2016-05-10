@@ -1,11 +1,11 @@
 package com.suime.context.model;
+
 import java.sql.Timestamp;
 import java.io.Serializable;
 
 /**
- * student 实体类
- * Created by Lynch 09/05/2016.
- */ 
+ * student 实体类 Created by Lynch 09/05/2016.
+ */
 public class Student implements Serializable {
 	/**
 	 * id
@@ -72,107 +72,107 @@ public class Student implements Serializable {
 	 */
 	private Byte status;
 
-	public void setId(Integer id){
-	this.id=id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public Integer getId(){
+	public Integer getId() {
 		return id;
 	}
 
-	public void setName(String name){
-	this.name=name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 
-	public void setCellphone(String cellphone){
-	this.cellphone=cellphone;
+	public void setCellphone(String cellphone) {
+		this.cellphone = cellphone;
 	}
 
-	public String getCellphone(){
+	public String getCellphone() {
 		return cellphone;
 	}
 
-	public void setMail(String mail){
-	this.mail=mail;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
-	public String getMail(){
+	public String getMail() {
 		return mail;
 	}
 
-	public void setPassword(String password){
-	this.password=password;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getPassword(){
+	public String getPassword() {
 		return password;
 	}
 
-	public void setGender(Byte gender){
-	this.gender=gender;
+	public void setGender(Byte gender) {
+		this.gender = gender;
 	}
 
-	public Byte getGender(){
+	public Byte getGender() {
 		return gender;
 	}
 
-	public void setType(String type){
-	this.type=type;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public String getType(){
+	public String getType() {
 		return type;
 	}
 
-	public void setStudyTime(String studyTime){
-	this.studyTime=studyTime;
+	public void setStudyTime(String studyTime) {
+		this.studyTime = studyTime;
 	}
 
-	public String getStudyTime(){
+	public String getStudyTime() {
 		return studyTime;
 	}
 
-	public void setIntegral(Integer integral){
-	this.integral=integral;
+	public void setIntegral(Integer integral) {
+		this.integral = integral;
 	}
 
-	public Integer getIntegral(){
+	public Integer getIntegral() {
 		return integral;
 	}
 
-	public void setExperience(Integer experience){
-	this.experience=experience;
+	public void setExperience(Integer experience) {
+		this.experience = experience;
 	}
 
-	public Integer getExperience(){
+	public Integer getExperience() {
 		return experience;
 	}
 
-	public void setCreateTime(Timestamp createTime){
-	this.createTime=createTime;
+	public void setCreateTime(Timestamp createTime) {
+		this.createTime = createTime;
 	}
 
-	public Timestamp getCreateTime(){
+	public Timestamp getCreateTime() {
 		return createTime;
 	}
 
-	public void setUpdateTime(Timestamp updateTime){
-	this.updateTime=updateTime;
+	public void setUpdateTime(Timestamp updateTime) {
+		this.updateTime = updateTime;
 	}
 
-	public Timestamp getUpdateTime(){
+	public Timestamp getUpdateTime() {
 		return updateTime;
 	}
 
-	public void setStatus(Byte status){
-	this.status=status;
+	public void setStatus(Byte status) {
+		this.status = status;
 	}
 
-	public Byte getStatus(){
+	public Byte getStatus() {
 		return status;
 	}
 
