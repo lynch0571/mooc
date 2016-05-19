@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.confucian.framework.dto.CommonResultBean;
 import com.confucian.framework.support.Constants;
-import com.suime.admin.helper.StudentSpiderAbstractRestController;
 import com.suime.admin.service.StudentService;
+import com.suime.admin.spider.StudentSpiderAbstractRestController;
 import com.suime.context.model.Student;
 
 /**
