@@ -155,6 +155,16 @@ public class StudentRestController extends StudentSpiderAbstractRestController {
     	if(student.getPassword()==null){
     		throw new BusinessException("","","用户密码不能为空！");
     	}
+    	if(student.getStatus()==null){
+    		student.setStatus((byte) 0);
+    	}
+    	if(student.getGender()==null){
+    		student.setGender((byte) 0);
+    	}
+    	student.setStudyTime("0分");
+    	student.setIntegral(0);
+    	student.setExperience(0);
+    	
     	if(!this.studentService.save(student)){
     		throw new BusinessException("","","注册失败，请稍后再试！");
     	}
