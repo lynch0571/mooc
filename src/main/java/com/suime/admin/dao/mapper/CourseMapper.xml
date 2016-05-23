@@ -46,7 +46,7 @@
 		id, name, teacher_id, chapter_count, section_count, create_time, update_time, image, path, duration, status, student_count
 	</sql>
 
-	<insert id="save" parameterType="com.suime.context.model.Course" keyProperty="id">
+	<insert id="save" parameterType="com.suime.context.model.Course" useGeneratedKeys="true" keyProperty="id">
 		insert into course
 		(
 		<include refid="sqlColumns"/>
