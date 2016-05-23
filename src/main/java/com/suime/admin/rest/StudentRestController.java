@@ -6,12 +6,16 @@ import java.util.List;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.confucian.framework.dto.CommonResultBean;
 import com.confucian.framework.support.Constants;
+import com.confucian.framework.web.exception.BusinessException;
+import com.confucian.mybatis.support.sql.Conds;
+import com.suime.admin.Tools.MD5Util;
 import com.suime.admin.service.StudentService;
 import com.suime.admin.spider.StudentSpiderAbstractRestController;
 import com.suime.context.model.Student;
@@ -104,6 +108,33 @@ public class StudentRestController extends StudentSpiderAbstractRestController {
     	CommonResultBean resultBean = new CommonResultBean();
     	resultBean.setResult(Constants.NORMAL_RESULT_RIGHT);
     	Student stu=this.studentService.fetchById(id);
+    	stu.setPassword(null);
+    	resultBean.setBody(stu);
+    	return resultBean;
+    }
+    
+    /**用户登录
+     * @param id
+     * @return
+     */
+    @RequestMapping(path = "/login", method = {RequestMethod.POST})
+    @RequiresAuthentication
+    public Object getStudentInfoById(@RequestBody Student student){
+    	CommonResultBean resultBean = new CommonResultBean();
+    	resultBean.setResult(Constants.NORMAL_RESULT_RIGHT);
+    	if(student.getId()==null){
+    		throw new BusinessException("","","用户id不能为空！");
+    	}
+    	if(student.getPassword()==null){
+    		throw new BusinessException("","","用户密码不能为空！");
+    	}
+    	Conds conds=new Conds();
+    	conds.equal("id", student.getId());
+    	conds.equal("password", MD5Util.MD5(student.getPassword()));
+    	Student stu=this.studentService.fetchSearchByConds(conds);
+    	if(stu==null){
+    		throw new BusinessException("","","用户名或密码错误！");
+    	}
     	stu.setPassword(null);
     	resultBean.setBody(stu);
     	return resultBean;
