@@ -93,4 +93,20 @@ public class StudentRestController extends StudentSpiderAbstractRestController {
     	resultBean.setBody(students);
     	return resultBean;
     }
+    
+    /**获取用户详情
+     * @param id
+     * @return
+     */
+    @RequestMapping(path = "/info/{id}", method = {RequestMethod.GET})
+    @RequiresAuthentication
+    public Object getStudentInfoById(@PathVariable Long id){
+    	CommonResultBean resultBean = new CommonResultBean();
+    	resultBean.setResult(Constants.NORMAL_RESULT_RIGHT);
+    	Student stu=this.studentService.fetchById(id);
+    	stu.setPassword(null);
+    	resultBean.setBody(stu);
+    	return resultBean;
+    }
+    
 }
