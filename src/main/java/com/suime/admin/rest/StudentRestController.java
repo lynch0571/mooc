@@ -119,7 +119,7 @@ public class StudentRestController extends StudentSpiderAbstractRestController {
      */
     @RequestMapping(path = "/login", method = {RequestMethod.POST})
     @RequiresAuthentication
-    public Object getStudentInfoById(@RequestBody Student student){
+    public Object login(@RequestBody Student student){
     	CommonResultBean resultBean = new CommonResultBean();
     	resultBean.setResult(Constants.NORMAL_RESULT_RIGHT);
     	if(student.getId()==null){
@@ -137,6 +137,29 @@ public class StudentRestController extends StudentSpiderAbstractRestController {
     	}
     	stu.setPassword(null);
     	resultBean.setBody(stu);
+    	return resultBean;
+    }
+    
+    /**用户注册
+     * @param id
+     * @return
+     */
+    @RequestMapping(path = "/reg", method = {RequestMethod.POST})
+    @RequiresAuthentication
+    public Object reg(@RequestBody Student student){
+    	CommonResultBean resultBean = new CommonResultBean();
+    	resultBean.setResult(Constants.NORMAL_RESULT_RIGHT);
+    	if(student.getName()==null){
+    		throw new BusinessException("","","用户名不能为空！");
+    	}
+    	if(student.getPassword()==null){
+    		throw new BusinessException("","","用户密码不能为空！");
+    	}
+    	if(!this.studentService.save(student)){
+    		throw new BusinessException("","","注册失败，请稍后再试！");
+    	}
+    	student.setPassword(null);
+    	resultBean.setBody(student);
     	return resultBean;
     }
     
