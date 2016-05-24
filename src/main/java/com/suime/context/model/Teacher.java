@@ -8,6 +8,11 @@ import java.io.Serializable;
  */ 
 public class Teacher implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5256737516773520123L;
+
+	/**
 	 * id
 	 */
 	private Integer id;

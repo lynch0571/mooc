@@ -8,6 +8,11 @@ import java.io.Serializable;
  */ 
 public class School implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9166437232572351267L;
+
+	/**
 	 * id
 	 */
 	private Integer id;

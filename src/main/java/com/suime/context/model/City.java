@@ -7,6 +7,11 @@ import java.io.Serializable;
  */ 
 public class City implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 677933469734754279L;
+
+	/**
 	 * id
 	 */
 	private Integer id;

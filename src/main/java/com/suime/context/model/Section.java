@@ -8,6 +8,11 @@ import java.io.Serializable;
  */ 
 public class Section implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6621495244570675294L;
+
+	/**
 	 * id
 	 */
 	private Integer id;

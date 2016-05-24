@@ -7,6 +7,11 @@ import java.io.Serializable;
  */ 
 public class Province implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8374037007053133891L;
+
+	/**
 	 * id
 	 */
 	private Short id;

@@ -8,6 +8,11 @@ import java.io.Serializable;
  */ 
 public class Chapter implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5060405725525087747L;
+
+	/**
 	 * id
 	 */
 	private Integer id;
